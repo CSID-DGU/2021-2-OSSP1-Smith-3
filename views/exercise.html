@@ -46,15 +46,30 @@
                     <span class="nav-item-head">메뉴</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/" target="_blank">
-                        <i class="mdi mdi-file-document-box menu-icon"></i>
-                        <span class="menu-title">스위스에서 온 스미스씨</span>
+                    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                        aria-controls="ui-basic">
+                        <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                        <span class="menu-title">학습예문</span>
+                        <i class="menu-arrow"></i>
                     </a>
+                    <div class="collapse" id="ui-basic">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">level 1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">level 2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">level 3</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/howto" target="_blank">
-                        <i class="mdi mdi-file-document-box menu-icon"></i>
-                        <span class="menu-title">사용법</span>
+                    <a class="nav-link" href="/practice">
+                        <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+                        <span class="menu-title">원하는 텍스트 연습</span>
                     </a>
                 </li>
             </ul>
@@ -120,7 +135,7 @@
             <div class="content-wrapper pb-0">
                 <div class="page-header flex-wrap">
                     <div class="header-left">
-                        <h4> 사용법 </h4>
+                        <h4> 학습예문 </h4>
                     </div>
                 </div>
                 <!-- first row starts here -->
@@ -250,6 +265,7 @@
                 </div>
             </div>
             <!-- content-wrapper ends -->
+
             <!-- partial:partials/_footer.html -->
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
