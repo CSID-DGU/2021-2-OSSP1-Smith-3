@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/CSID-DGU/2021-2-OSSP1-Smith-3/issues"
   },
-  "homepage": "https://github.com/CSID-DGU/2021-2-OSSP1-Smith-3#readme"
+  "homepage": "https://github.com/CSID-DGU/2021-2-OSSP1-Smith-3#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
