@@ -11,7 +11,7 @@ app.use(express.static("./assets/"));
 
 // setup a 'route' to listen on the default url path
 app.get("/", function(req,res){
-    res.sendFile(path.join(__dirname, "./views/index.html"));
+    res.sendFile(path.join(__dirname, "./views/main.html"));
 });
 
 // setup http server to listen on HTTP_PORT
