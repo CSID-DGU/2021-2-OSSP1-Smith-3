@@ -14,6 +14,11 @@ app.get("/", function(req,res){
     res.sendFile(path.join(__dirname, "./views/main.html"));
 });
 
+app.get("/howto", function(req,res){
+  res.sendFile(path.join(__dirname, "./views/howto.html"));
+});
+
+
 // setup http server to listen on HTTP_PORT
 app.listen(HTTP_PORT, onHttpStart);
 
