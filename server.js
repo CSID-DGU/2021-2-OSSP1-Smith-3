@@ -26,6 +26,14 @@ app.get("/practice", function(req,res){
   res.sendFile(path.join(__dirname, "./views/practice.html"));
 });
 
+app.get("/tonguetwister", function(req,res){
+  res.sendFile(path.join(__dirname, "./views/tonguetwister.html"));
+});
+
+app.get("/colloquial", function(req,res){
+  res.sendFile(path.join(__dirname, "./views/colloquial.html"));
+});
+
 
 // setup http server to listen on HTTP_PORT
 app.listen(HTTP_PORT, onHttpStart);
