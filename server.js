@@ -11,7 +11,11 @@ app.use(express.static("./assets/"));
 
 // setup a 'route' to listen on the default url path
 app.get("/", function(req,res){
-    res.sendFile(path.join(__dirname, "./views/main.html"));
+  res.redirect("/main");
+});
+
+app.get("/main", function(req,res){
+  res.sendFile(path.join(__dirname, "./views/main.html"));
 });
 
 app.get("/howto", function(req,res){
