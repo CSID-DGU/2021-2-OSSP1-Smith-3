@@ -18,27 +18,56 @@ app.get("/main", function(req,res){
   res.sendFile(path.join(__dirname, "./views/main.html"));
 });
 
+// ---------------------------------------------------
+
 app.get("/howto", function(req,res){
   res.sendFile(path.join(__dirname, "./views/howto.html"));
 });
+
+// ---------------------------------------------------
 
 app.get("/exercise", function(req,res){
   res.sendFile(path.join(__dirname, "./views/exercise.html"));
 });
 
+app.get("/school", function(req,res){
+  res.sendFile(path.join(__dirname, "./views/school.html"));
+});
+
+app.get("/restaurant", function(req,res){
+  res.sendFile(path.join(__dirname, "./views/restaurant.html"));
+});
+app.get("/greetings", function(req,res){
+  res.sendFile(path.join(__dirname, "./views/greetings.html"));
+});
+
+app.get("/travel", function(req,res){
+  res.sendFile(path.join(__dirname, "./views/travel.html"));
+});
+
+app.get("/hospital", function(req,res){
+  res.sendFile(path.join(__dirname, "./views/hospital.html"));
+});
+
+app.get("/shopping", function(req,res){
+  res.sendFile(path.join(__dirname, "./views/shopping.html"));
+});
+// ---------------------------------------------------
 app.get("/practice", function(req,res){
   res.sendFile(path.join(__dirname, "./views/practice.html"));
 });
 
+// ---------------------------------------------------
 app.get("/tonguetwister", function(req,res){
   res.sendFile(path.join(__dirname, "./views/tonguetwister.html"));
 });
 
+// ---------------------------------------------------
 app.get("/colloquial", function(req,res){
   res.sendFile(path.join(__dirname, "./views/colloquial.html"));
 });
 
-
+// ---------------------------------------------------
 // setup http server to listen on HTTP_PORT
 app.listen(HTTP_PORT, onHttpStart);
 
