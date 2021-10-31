@@ -1,14 +1,86 @@
-[{"상황":"어디로 갈지 정하는 상황","발화자":"A-1","한국어":"우리 7월에 여행 가기로 한 거 어디 갈지 결정했어?","영어":"Do you remember that we are going on the trip together in July? Did you decide where to go?"},
-{"상황":"어디로 갈지 정하는 상황","발화자":"B-1","한국어":"아니. 세부랑 태국 중에 고민이야. 어떡할까?","영어":"Not yet. I don't know what to choose, Bangkok or Cebu. What do you think?"},
-{"상황":"어디로 갈지 정하는 상황","발화자":"A-2","한국어":"사실 나는 세부는 이미 가봐서. 태국은 어때?","영어":"I've actually been to Cebu. How about Thailand?"},
-{"상황":"어디로 갈지 정하는 상황","발화자":"B-2","한국어":"그러자. 나는 둘 다 안 가봐서 어디든 상관없어.","영어":"Sure. I've never been to both places, so I don’t mind."},
-{"상황":"여행 와서 길 물을 때","발화자":"A-1","한국어":"실례합니다. 이 음식점으로 가는 방법 좀 알려주세요.","영어":"Excuse me. How can I get to this restaurant?"},
-{"상황":"여행 와서 길 물을 때","발화자":"B-1","한국어":"여기 가까워요. 이 길로 쭉 직진하시면 노란색 큰 간판이 있는데  거기 바로 옆 골목이에요.","영어":"It's very close. Go straight this way and you'll see a big yellow sign. The restaurant is in the alley right next to it."},
-{"상황":"여행 와서 길 물을 때","발화자":"A-2","한국어":"감사합니다. 혹시 가는 데 시간은 얼마나 걸릴까요?","영어":"Thanks, how long will it take to get there?"},
-{"상황":"여행 와서 길 물을 때","발화자":"B-2","한국어":"아마 5분도 안 걸릴 거예요. 노란 간판 보일 때까지 계속 직진하세요.","영어":"Less than 5 minutes probably. Keep walking straight until you see the yellow sign."},
-{"상황":"일정을 묻는 상황","발화자":"A-1","한국어":"우리 오늘 일정이 뭐야? 오늘도 어제처럼 바빠?","영어":"What's the plan for today? Are we going to be busy like yesterday?"},
-{"상황":"일정을 묻는 상황","발화자":"B-1","한국어":"아니. 오늘은 딱히 할 거 없어. 여유롭게 다니자.","영어":"No, we don't have anything to do so let's enjoy our time together."},
-{"상황":"일정을 변경하는 상황","발화자":"A-1","한국어":"우리 여기 가기로 했던 거 그냥 가지 말까?","영어":"You know the place that we're going to go, should we just not go?"},
-{"상황":"일정을 변경하는 상황","발화자":"B-1","한국어":"응? 왜 그래? 갑자기 무슨 문제라도 생겼어? ","영어":"Why? What's the matter? Is there a problem?"},
-{"상황":"일정을 변경하는 상황","발화자":"A-2","한국어":"응. 여기 가는 버스가 오늘은 사정상 운행을 안 해. 택시를 타기엔 돈이 너무 비싸.","영어":"Yes, the bus for this route doesn't operate today for some reason. And it'll cost a lot to go via cab."},
-{"상황":"일정을 변경하는 상황","발화자":"B-2","한국어":"그래. 다음에 다시 갈 기회가 있을 거야. 다른 곳을 찾아보자.","영어":"I see. We'll find another opportunity. Let' find another place to go."}]
+[
+  {
+    "상황": "어디로 갈지 정하는 상황",
+    "발화자": "A-1",
+    "한국어": "우리 7월에 여행 가기로 한 거 어디 갈지 결정했어?",
+    "영어": "Do you remember that we are going on the trip together in July? Did you decide where to go?"
+  },
+  {
+    "상황": "어디로 갈지 정하는 상황",
+    "발화자": "B-1",
+    "한국어": "아니. 세부랑 태국 중에 고민이야. 어떡할까?",
+    "영어": "Not yet. I don't know what to choose, Bangkok or Cebu. What do you think?"
+  },
+  {
+    "상황": "어디로 갈지 정하는 상황",
+    "발화자": "A-2",
+    "한국어": "사실 나는 세부는 이미 가봐서. 태국은 어때?",
+    "영어": "I've actually been to Cebu. How about Thailand?"
+  },
+  {
+    "상황": "어디로 갈지 정하는 상황",
+    "발화자": "B-2",
+    "한국어": "그러자. 나는 둘 다 안 가봐서 어디든 상관없어.",
+    "영어": "Sure. I've never been to both places, so I don’t mind."
+  },
+  {
+    "상황": "여행 와서 길 물을 때",
+    "발화자": "A-1",
+    "한국어": "실례합니다. 이 음식점으로 가는 방법 좀 알려주세요.",
+    "영어": "Excuse me. How can I get to this restaurant?"
+  },
+  {
+    "상황": "여행 와서 길 물을 때",
+    "발화자": "B-1",
+    "한국어": "여기 가까워요. 이 길로 쭉 직진하시면 노란색 큰 간판이 있는데 거기 바로 옆 골목이에요.",
+    "영어": "It's very close. Go straight this way and you'll see a big yellow sign. The restaurant is in the alley right next to it."
+  },
+  {
+    "상황": "여행 와서 길 물을 때",
+    "발화자": "A-2",
+    "한국어": "감사합니다. 혹시 가는 데 시간은 얼마나 걸릴까요?",
+    "영어": "Thanks, how long will it take to get there?"
+  },
+  {
+    "상황": "여행 와서 길 물을 때",
+    "발화자": "B-2",
+    "한국어": "아마 5분도 안 걸릴 거예요. 노란 간판 보일 때까지 계속 직진하세요.",
+    "영어": "Less than 5 minutes probably. Keep walking straight until you see the yellow sign."
+  },
+  {
+    "상황": "일정을 묻는 상황",
+    "발화자": "A-1",
+    "한국어": "우리 오늘 일정이 뭐야? 오늘도 어제처럼 바빠?",
+    "영어": "What's the plan for today? Are we going to be busy like yesterday?"
+  },
+  {
+    "상황": "일정을 묻는 상황",
+    "발화자": "B-1",
+    "한국어": "아니. 오늘은 딱히 할 거 없어. 여유롭게 다니자.",
+    "영어": "No, we don't have anything to do so let's enjoy our time together."
+  },
+  {
+    "상황": "일정을 변경하는 상황",
+    "발화자": "A-1",
+    "한국어": "우리 여기 가기로 했던 거 그냥 가지 말까?",
+    "영어": "You know the place that we're going to go, should we just not go?"
+  },
+  {
+    "상황": "일정을 변경하는 상황",
+    "발화자": "B-1",
+    "한국어": "응? 왜 그래? 갑자기 무슨 문제라도 생겼어? ",
+    "영어": "Why? What's the matter? Is there a problem?"
+  },
+  {
+    "상황": "일정을 변경하는 상황",
+    "발화자": "A-2",
+    "한국어": "응. 여기 가는 버스가 오늘은 사정상 운행을 안 해. 택시를 타기엔 돈이 너무 비싸.",
+    "영어": "Yes, the bus for this route doesn't operate today for some reason. And it'll cost a lot to go via cab."
+  },
+  {
+    "상황": "일정을 변경하는 상황",
+    "발화자": "B-2",
+    "한국어": "그래. 다음에 다시 갈 기회가 있을 거야. 다른 곳을 찾아보자.",
+    "영어": "I see. We'll find another opportunity. Let' find another place to go."
+  }
+]
