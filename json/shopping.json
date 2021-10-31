@@ -1,0 +1,68 @@
+[
+  {
+    "소분류": "제품에 문제가 있을 때",
+    "발화자": "A-1",
+    "한국어": "휴대전화 배터리 소모가 빨라요. 휴대전화에 이상이 있는 건가요?",
+    "영어": "The battery runs down quickly on my cellphone. Is there something wrong with the cellphone?"
+  },
+  {
+    "소분류": "제품에 문제가 있을 때",
+    "발화자": "B-1",
+    "한국어": "확인해보니 휴대전화 배터리 교체가 필요합니다.",
+    "영어": "After checking it,  I found that the cellphone battery needs to be replaced."
+  },
+  {
+    "소분류": "제품에 문제가 있을 때",
+    "발화자": "A-1",
+    "한국어": "새 배터리 교체 비용은 어떻게 되나요?",
+    "영어": "What is the cost to replace it with a new battery?"
+  },
+  {
+    "소분류": "제품에 문제가 있을 때",
+    "발화자": "B-1",
+    "한국어": "25,000원입니다. 교체하면 문제가 없을 겁니다.",
+    "영어": "It's 25,000 won. There should be no problems after it has been replaced."
+  },
+  {
+    "소분류": "교환/환불 요청할 때",
+    "발화자": "A-1",
+    "한국어": "액정 보호필름을 구매했는데 깨진 상태로 왔어요. 교환해주세요.",
+    "영어": "I bought a protective film for my display, but it came broken. Please exchange it."
+  },
+  {
+    "소분류": "교환/환불 요청할 때",
+    "발화자": "A-1",
+    "한국어": "여기 티셔츠는 다른 곳보다 사이즈가 크게 나오는 것 같네요. 교환할 수 있을까요?",
+    "영어": "It looks like the T-shirts sizes here are larger than other places. Can I exchange this?"
+  },
+  {
+    "소분류": "제품이 있는 지 문의할 때",
+    "발화자": "A-1",
+    "한국어": "이번에 새로 나온 포켓몬 닌텐도를 사고 싶습니다.",
+    "영어": "I want to buy the newly released #Pokemon# #Nintendo#."
+  },
+  {
+    "소분류": "제품이 있는 지 문의할 때",
+    "발화자": "B-1",
+    "한국어": "현재 그 제품은 인기가 많아서 구하기 어렵습니다.",
+    "영어": "It's hard to get a hold of that product as it's so popular."
+  },
+  {
+    "소분류": "제품이 있는 지 문의할 때",
+    "발화자": "A-1",
+    "한국어": "혹시 근처 다른 매장에 재고가 남아있나요?",
+    "영어": "Is there any left in stock in other branches nearby?"
+  },
+  {
+    "소분류": "제품을 요청할 때",
+    "발화자": "A-1",
+    "한국어": "이 디자인이 귀엽네요. 똑같은 디자인에 어두운 색상은 없나요?",
+    "영어": "This design is cute. Is there the same design in a darker color?"
+  },
+  {
+    "소분류": "제품을 요청할 때",
+    "발화자": "B-1",
+    "한국어": "밝은 색상밖에 남지 않았어요.",
+    "영어": "We only have bright colors left."
+  }
+]
