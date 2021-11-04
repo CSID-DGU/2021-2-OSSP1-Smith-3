@@ -18,10 +18,12 @@ recognition.continuous = true;
 // 기본은 10000이었다.
 recognition.maxAlternatives = 100000;
 
-const speech_to_text = document.querySelector(".speech_to_text");
+const speech_to_text = document.getElementById("speech_to_text");
 
 let speechToText = "";
+
 recognition.addEventListener("result", (e) => {
+    
 let interimTranscript = "";
 for (let i = e.resultIndex, len = e.results.length; i < len; i++) {
     let transcript = e.results[i][0].transcript;
@@ -35,17 +37,17 @@ for (let i = e.resultIndex, len = e.results.length; i < len; i++) {
 speech_to_text.innerHTML = speechToText + interimTranscript;
 });
 
-const btn_mic_toggle = document.querySelector(".btn_mic_toggle");
+const btn_mic_toggle = document.getElementById("btn_mic_toggle");
 btn_mic_toggle.addEventListener("click", () => {
     // 음성 인식 켜져 있으면
     if(is_mic_on) {
-        btn_mic_toggle.textContent = "음성인식 시작";
+        btn_mic_toggle.textContent = "연습 시작";
         is_mic_on = false;
         recognition.abort();
     }
     // 꺼져 있으면
     else {
-        btn_mic_toggle.textContent = "음성인식 종료";
+        btn_mic_toggle.textContent = "종료";
         is_mic_on = true;
         recognition.start();
     }
