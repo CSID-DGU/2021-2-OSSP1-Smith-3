@@ -48,6 +48,7 @@ btn_mic_toggle.addEventListener("click", () => {
     // 꺼져 있으면
     else {
         btn_mic_toggle.textContent = "종료";
+        speechToText = "";  // 연습 새로 시작할 때 리프레시
         is_mic_on = true;
         recognition.start();
     }
