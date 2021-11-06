@@ -1,7 +1,7 @@
 const kor = document.querySelector('.kor-sentence');
 const situation = document.querySelector('.situation');
 const eng = document.querySelector('.eng-description');
-const url = 'http://localhost:8080/greeting.json';
+const url = 'http://localhost:8080/greeting.json';  
 
 let idx = 0;
 fetch(url)
@@ -11,3 +11,14 @@ fetch(url)
     situation.innerHTML = data[idx].소분류;
     eng.innerHTML = data[idx].영어;
   });
+
+
+
+
+
+
+
+
+  
+
+

@@ -11,3 +11,5 @@ fetch(url)
     situation.innerHTML = data[idx].소분류;
     eng.innerHTML = data[idx].영어;
   });
+
+
