@@ -151,14 +151,19 @@
                         <h4> 학습예문 - 학교 </h4>
                     </div>
                 </div>
+                <div class="situation" style="margin: 10px 0px;">
+                    <h5>situation</h5>
+                </div>
                 <!-- first row starts here -->
                 <!-- image card row starts here -->
                 <div class="row">
                     <div class="col-md-6 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Default form</h4>
-                                <p class="card-description">Basic form layout</p>
+
+                                <h4 class="card-title"></h4>
+                                <p class="card-description kor-sentence" style="text-align: center; font-size: 18px; color: black; font-weight: bold;">Basic form layout</p>
+                                <p class="card-description eng-description" style="text-align: center; font-size: 14px;">Basic form layout</p> 
 
                             </div>
                         </div>
@@ -182,6 +187,12 @@
                         </div>
                     </div>
                 </div>
+                         <!--예문 -->   
+                         <div style='width:80px;float: right; display:flex; justify-content:center;'>
+                            <input type='button' id='prev-bt' name='btn' value='BEFORE' />
+                            <input type='button' id='next-bt' name='btn' value='NEXT' style="margin: 0px 50px 0px 10px " />                                                 
+                        </div>
+                        <!--예문-->                  
             </div>
             <!-- content-wrapper ends -->
 
@@ -234,6 +245,7 @@
     <!-- Custom js for this page -->
     <script src="js/dashboard.js"></script>
     <!-- End custom js for this page -->
+    <script src="/scripts/school.js"></script>
 </body>
 
 </html>
