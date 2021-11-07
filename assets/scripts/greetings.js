@@ -1,7 +1,8 @@
 const kor = document.querySelector('.kor-sentence');
 const situation = document.querySelector('.situation');
 const eng = document.querySelector('.eng-description');
-const url = 'http://localhost:8080/greeting.json';  
+const url = 'http://localhost:8080/greeting.json';
+var nextbt = document.getElementById('nextbt');
 
 let idx = 0;
 fetch(url)
@@ -10,15 +11,17 @@ fetch(url)
     kor.innerHTML = data[idx].한국어;
     situation.innerHTML = data[idx].소분류;
     eng.innerHTML = data[idx].영어;
+
+    nextbt.addEventListener('click', function () {
+      showNext(data);
+    });
   });
 
-
-
-
-
-
-
-
-  
-
-
+function showNext(data) {
+  if (idx < 10) {
+    idx++;
+    kor.innerHTML = data[idx].한국어;
+    situation.innerHTML = data[idx].소분류;
+    eng.innerHTML = data[idx].영어;
+  }
+}
