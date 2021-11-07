@@ -177,33 +177,11 @@
                         </div>
                     </div>
                 </div>
-                         <!--예문 -->   
-                         <div style='width:80px;float: right;'>
-                            <input type='button' id='nextbt' name='btn' value='NEXT' />
-                            
-                            <script >
-                                var kor1 = document.querySelector('.kor-sentence');
-                                var situation1 = document.querySelector('.situation');
-                                var eng1 = document.querySelector('.eng-description');
-                                var url1 = 'http://localhost:8080/shoppint.json';  
-                                var hw = document.getElementById('nextbt');
-                                let temp =1;
-            
-                                nextbt.addEventListener('click', function(){
-                                
-                                if(temp <10){
-                                fetch(url)
-                               .then((response) => response.json())
-                               .then((data) => {
-                                kor.innerHTML = data[temp].한국어;
-                                situation.innerHTML = data[temp].소분류;
-                               eng.innerHTML = data[temp].영어;
-                               temp++;
-                               });}                   
-                               })
-                            </script>
+                          <!--예문 -->   
+                          <div style='width:80px;float: right; display:flex; justify-content:center;'>
+                            <input type='button' id='nextbt' name='btn' value='NEXT' style="margin: 0px 50px 0px 10px " />                                                 
                         </div>
-                        <!--예문-->
+                        <!--예문-->                       
             </div>
             <!-- content-wrapper ends -->
 

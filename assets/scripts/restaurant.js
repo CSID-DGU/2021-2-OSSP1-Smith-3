@@ -10,6 +10,19 @@ fetch(url)
     kor.innerHTML = data[idx].한국어;
     situation.innerHTML = data[idx].소분류;
     eng.innerHTML = data[idx].영어;
+
+    nextbt.addEventListener ('click', function(){
+      showNext(data);
+    });
   });
+
+  function showNext(data) {
+    if (idx < 10) {
+      idx++;
+      kor.innerHTML = data[idx].한국어;
+      situation.innerHTML = data[idx].소분류;
+      eng.innerHTML = data[idx].영어;
+    }
+  }
 
 
