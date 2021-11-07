@@ -12,7 +12,7 @@ recognition.interimResults = true;
 recognition.lang = "ko-KR";
 // true means continuous, and false means not continuous (single result each time.)
 // true면 음성 인식이 안 끝나고 계속됩니다.
-recognition.continuous = true;
+recognition.continuous = false;
 // 숫자가 작을수록 발음대로 적고, 크면 문장의 적합도에 따라 알맞은 단어로 대체합니다.
 // maxAlternatives가 크면 이상한 단어도 문장에 적합하게 알아서 수정합니다.
 // 기본은 10000이었다.
