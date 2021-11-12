@@ -30,9 +30,13 @@ function showNext(data) {
     situation.innerHTML = data[idx].소분류;
     eng.innerHTML = data[idx].영어;
   }
+  if (idx === 9) {
+    nextbt.disabled = 'disabled';
+  }
 }
 
 function showPrev(data) {
+  nextbt.disabled = false;
   if (idx > 0) {
     idx--;
     kor.innerHTML = data[idx].한국어;
