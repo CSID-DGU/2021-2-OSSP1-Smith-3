@@ -97,3 +97,7 @@ app.get('/shopping.json', (req, res) => {
 app.get('/travel.json', (req, res) => {
   res.sendFile(path.join(__dirname, './assets/json/travel.json'));
 });
+
+app.post('/views.py', (req, res) => {
+  console.log(req.title, req.body.date);
+})

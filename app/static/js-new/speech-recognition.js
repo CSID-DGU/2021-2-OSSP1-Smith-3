@@ -24,17 +24,19 @@ let speechToText = "";
 
 recognition.addEventListener("result", (e) => {
     
-let interimTranscript = "";
-for (let i = e.resultIndex, len = e.results.length; i < len; i++) {
-    let transcript = e.results[i][0].transcript;
-    console.log(transcript);
-    if (e.results[i].isFinal) {
-    speechToText += transcript;
-    } else {
-    interimTranscript += transcript;
+    let interimTranscript = "";
+    for (let i = e.resultIndex, len = e.results.length; i < len; i++) {
+        let transcript = e.results[i][0].transcript;
+        console.log(transcript);
+        if (e.results[i].isFinal) {
+        speechToText += transcript;
+        } else {
+        interimTranscript += transcript;
+        }
     }
-}
-speech_to_text.innerHTML = speechToText + interimTranscript;
+    speech_to_text.innerHTML = speechToText + interimTranscript;
+
+    
 });
 
 const btn_mic_toggle = document.getElementById("btn_mic_toggle");

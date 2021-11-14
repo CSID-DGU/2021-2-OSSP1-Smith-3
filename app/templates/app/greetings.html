@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/demo_1/style.css" />
     <!-- End layout styles -->
     <link rel="shortcut icon" href="images/favicon.png" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
@@ -156,18 +157,22 @@
                 </div>
                 <!-- first row starts here -->
                 <!-- image card row starts here -->
+                
                 <div class="row">
-                    <div class="col-md-6 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
+                    <form id="input" method="post">
+                        <div class="col-md-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
 
-                                <h4 class="card-title"></h4>
-                                <p class="card-description kor-sentence" style="text-align: center; font-size: 18px; color: black; font-weight: bold;">Basic form layout</p>
-                                <p class="card-description eng-description" style="text-align: center; font-size: 14px;">Basic form layout</p> 
+                                    <h4 class="card-title"></h4>
+                                    <p class="card-description kor-sentence" style="text-align: center; font-size: 18px; color: black; font-weight: bold;">Basic form layout</p>
+                                    <p class="card-description eng-description" style="text-align: center; font-size: 14px;">Basic form layout</p> 
 
+                                </div>
                             </div>
+                            <input class="btn" type="submit" value="분석하기">
                         </div>
-                    </div>
+                    </form>
                     <div class="col-md-6 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
@@ -250,3 +255,14 @@
 </body>
 
 </html>
+
+<script>
+    $.ajax({
+        url: "views.py",
+        data: {'final_str': final_str,  csrfmiddlewaretoken: '{{ csrf_token }}'},
+        type: "POST",
+        dataType: "json",
+        success: function(response){
+        }
+    });
+</script>

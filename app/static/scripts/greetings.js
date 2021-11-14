@@ -5,6 +5,8 @@ const url = 'http://localhost:8080/greeting.json';
 var nextbt = document.getElementById('next-bt');
 var prevbt = document.getElementById('prev-bt');
 
+
+
 let idx = 0;
 fetch(url)
   .then((response) => response.json())
@@ -43,3 +45,5 @@ function showPrev(data) {
     prevbt.disabled = 'disabled';
   }
 }
+
+
