@@ -1,26 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Mr. Smith from Switzerland</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="vendors/jquery-bar-rating/css-stars.css" />
-    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css" />
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="css/demo_1/style.css" />
-    <!-- End layout styles -->
-    <link rel="shortcut icon" href="images/favicon.png" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Mr. Smith from Switzerland</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href='{% static "vendors/mdi/css/materialdesignicons.min.css" %}'>
+  <link rel="stylesheet" href='{% static "vendors/flag-icon-css/css/flag-icon.min.css" %}'>
+  <link rel="stylesheet" href='{% static "vendors/css/vendor.bundle.base.css" %}'>
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href='{% static "vendors/jquery-bar-rating/css-stars.css" %}'/>
+  <link rel="stylesheet" href='{% static "vendors/font-awesome/css/font-awesome.min.css" %}' />
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href='{% static "css/demo_1/style.css" %}'/>
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href='{% static "images/favicon.png" %}'/>
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                 <li class="nav-item nav-profile border-bottom">
                     <a href="/main" class="nav-link flex-column">
                         <div class="nav-profile-image">
-                            <img src="images/smith.png" alt="profile" />
+                            <img src='{% static "images/smith.png" %}' alt="profile" />
                             <!--change to offline or busy as needed-->
                         </div>
                         <div class="nav-profile-text d-flex ml-0 mb-3 flex-column">
@@ -94,7 +95,7 @@
                     <span class="mdi mdi-chevron-double-left"></span>
                 </button>
                 <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                    <a class="navbar-brand brand-logo-mini" href="/main"><img src="images/logo-mini.svg"
+                    <a class="navbar-brand brand-logo-mini" href="/main"><img src='{% static "images/logo-mini.svg" %}'
                             alt="logo" /></a>
                 </div>
                 <ul class="navbar-nav navbar-nav-right">
@@ -182,7 +183,7 @@
                         <a href="/restaurant">
                             <div class="card">
                                 <div class="card-body p-0">
-                                    <img class="img-fluid w-100" src="images/exercise/restaurant.jpeg" alt="" />
+                                    <img class="img-fluid w-100" src='{% static "images/exercise/restaurant.jpeg" %}' alt="" />
                                 </div>
                                 <div class="card-body px-3 text-dark">
                                     <div class="d-flex justify-content-between">
@@ -204,7 +205,7 @@
                         <a href="/greetings">
                             <div class="card">
                                 <div class="card-body p-0">
-                                    <img class="img-fluid w-100" src="images/exercise/hello.jpg" alt="" />
+                                    <img class="img-fluid w-100" src='{% static "images/exercise/hello.jpg" %}' alt="" />
                                 </div>
                                 <div class="card-body px-3 text-dark">
                                     <div class="d-flex justify-content-between">
@@ -228,7 +229,7 @@
                         <a href="/travel">
                             <div class="card">
                                 <div class="card-body p-0">
-                                    <img class="img-fluid w-100" src="images/exercise/travel.jpg" alt="" />
+                                    <img class="img-fluid w-100" src='{% static "images/exercise/travel.jpg" %}' alt="" />
                                 </div>
                                 <div class="card-body px-3 text-dark">
                                     <div class="d-flex justify-content-between">
@@ -250,7 +251,7 @@
                         <a href="/hospital">
                             <div class="card">
                                 <div class="card-body p-0">
-                                    <img class="img-fluid w-100" src="images/exercise/hospital.jpg" alt="" />
+                                    <img class="img-fluid w-100" src='{% static "images/exercise/hospital.jpg" %}' alt="" />
                                 </div>
                                 <div class="card-body px-3 text-dark">
                                     <div class="d-flex justify-content-between">
@@ -272,7 +273,7 @@
                         <a href="/shopping">
                             <div class="card">
                                 <div class="card-body p-0">
-                                    <img class="img-fluid w-100" src="images/exercise/shopping.jpeg" alt="" />
+                                    <img class="img-fluid w-100" src='{% static "images/exercise/shopping.jpeg" %}' alt="" />
                                 </div>
                                 <div class="card-body px-3 text-dark">
                                     <div class="d-flex justify-content-between">
@@ -316,28 +317,28 @@
     <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="vendors/jquery-bar-rating/jquery.barrating.min.js"></script>
-    <script src="vendors/chart.js/Chart.min.js"></script>
-    <script src="vendors/flot/jquery.flot.js"></script>
-    <script src="vendors/flot/jquery.flot.resize.js"></script>
-    <script src="vendors/flot/jquery.flot.categories.js"></script>
-    <script src="vendors/flot/jquery.flot.fillbetween.js"></script>
-    <script src="vendors/flot/jquery.flot.stack.js"></script>
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="js/off-canvas.js"></script>
-    <script src="js/hoverable-collapse.js"></script>
-    <script src="js/misc.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/todolist.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <script src="js/dashboard.js"></script>
-    <!-- End custom js for this page -->
+  <!-- plugins:js -->
+  <script src='{% static "vendors/js/vendor.bundle.base.js" %}'></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src='{% static "vendors/jquery-bar-rating/jquery.barrating.min.js" %}'></script>
+  <script src='{% static "vendors/chart.js/Chart.min.js" %}'></script>
+  <script src='{% static "vendors/flot/jquery.flot.js" %}'></script>
+  <script src='{% static "vendors/flot/jquery.flot.resize.js" %}'></script>
+  <script src='{% static "vendors/flot/jquery.flot.categories.js" %}'></script>
+  <script src='{% static "vendors/flot/jquery.flot.fillbetween.js" %}'></script>
+  <script src='{% static "vendors/flot/jquery.flot.stack.js" %}'></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src='{% static "js/off-canvas.js" %}'></script>
+  <script src='{% static "js/hoverable-collapse.js" %}'></script>
+  <script src='{% static "js/misc.js" %}'></script>
+  <script src='{% static "js/settings.js" %}'></script>
+  <script src='{% static "js/todolist.js" %}'></script>
+  <!-- endinject -->
+  <!-- Custom js for this page -->
+  <script src='{% static "js/dashboard.js" %}'></script>
+  <!-- End custom js for this page -->
 </body>
 
 </html>

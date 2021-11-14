@@ -32,7 +32,51 @@ yellowSentenceIndex = []
 
 
 def mainPage(request):
-    return render(request, "main.html")
+    return render(request, 'main.html')
+
+
+def colloquial(request):
+    return render(request, 'colloquial.html')
+
+
+def exercise(request):
+    return render(request, 'exercise.html')
+
+
+def greetings(request):
+    return render(request, 'greetings.html')
+
+
+def hospital(request):
+    return render(request, 'hospital.html')
+
+
+def howto(request):
+    return render(request, 'howto.html')
+
+
+def restaurant(request):
+    return render(request, 'restaurant.html')
+
+
+def school(request):
+    return render(request, 'school.html')
+
+
+def shopping(request):
+    return render(request, 'shopping.html')
+
+
+def tonguetwister(request):
+    return render(request, 'tonguetwister.html')
+
+
+def travel(request):
+    return render(request, 'travel.html')
+
+
+def practice(request):
+    return render(request, 'practice.html')
 
 
 def main(request):
