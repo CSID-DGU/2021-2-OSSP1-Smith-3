@@ -1,17 +1,17 @@
 const kor = document.querySelector('.kor-sentence');
-const situation = document.querySelector('.situation');
 const eng = document.querySelector('.eng-description');
-const url = 'http://localhost:8080/shopping.json';
+const url = 'http://localhost:8080/colloquial.json';
 var nextbt = document.getElementById('next-bt');
 var prevbt = document.getElementById('prev-bt');
+var word = document.getElementById('word');
+var short = document.getElementById('short-description');
+var long = document.getElementById('long-description');
 
 let idx = 0;
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
-    kor.innerHTML = data[idx].한국어;
-    situation.innerHTML = data[idx].소분류;
-    eng.innerHTML = data[idx].영어;
+    editHtml(data);
 
     prevbt.disabled = 'disabled';
     nextbt.addEventListener('click', function () {
@@ -24,13 +24,11 @@ fetch(url)
 
 function showNext(data) {
   prevbt.disabled = false;
-  if (idx < 10) {
+  if (idx < 20) {
     idx++;
-    kor.innerHTML = data[idx].한국어;
-    situation.innerHTML = data[idx].소분류;
-    eng.innerHTML = data[idx].영어;
+    editHtml(data);
   }
-  if (idx === 9) {
+  if (idx === 19) {
     nextbt.disabled = 'disabled';
   }
 }
@@ -39,12 +37,18 @@ function showPrev(data) {
   nextbt.disabled = false;
   if (idx > 0) {
     idx--;
-    kor.innerHTML = data[idx].한국어;
-    situation.innerHTML = data[idx].소분류;
-    eng.innerHTML = data[idx].영어;
+    editHtml(data);
   }
 
   if (idx === 0) {
     prevbt.disabled = 'disabled';
   }
+}
+
+function editHtml(data) {
+  kor.innerHTML = data[idx].예문;
+  eng.innerHTML = data[idx].예문번역;
+  word.innerHTML = data[idx].단어;
+  short.innerHTML = data[idx].설명;
+  long.innerHTML = data[idx].긴설명;
 }

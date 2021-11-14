@@ -97,3 +97,11 @@ app.get('/shopping.json', (req, res) => {
 app.get('/travel.json', (req, res) => {
   res.sendFile(path.join(__dirname, './assets/json/travel.json'));
 });
+
+app.get('/tonguetwister.json', (req, res) => {
+  res.sendFile(path.join(__dirname, './assets/json/tonguetwister.json'));
+});
+
+app.get('/colloquial.json', (req, res) => {
+  res.sendFile(path.join(__dirname, './assets/json/colloquial.json'));
+});
