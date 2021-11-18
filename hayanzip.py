@@ -48,7 +48,8 @@ def main(ans,speak):
     # print(falseWord)
 
     data = {  # Json으로 넘길 data 생성
-        'mecab_table': voice_table, #형태소 분석 결과
+        'script_table': script_table, # 예문 형태소 분석 결과 
+        'voice_table': voice_table, # 사용자가 말한 문장 형태소 분석 결과
         'false':falseWord # 틀린 부분 "틀린 형태소": "틀린 글자"
     }
     print(json.dumps(data))
@@ -90,13 +91,17 @@ def reconstruct():
                     
                 
 def needReconstruct():
-    if len(voice_table)!=len(script_table): # 형태소 개수가 다름
-        return True
-    else:
-        for i in range(len(voice_table)):
-            if(len(voice_table[i])!=len(script_table[i])): # 개수는 같은데 형식이 다름 ex) ["해","외","여행"] ["해외","여", "행"] 
-                return True
-    
+    # 적당히 틀린 경우 여기서 걸러 낼 수 있음
+    # ex) "해외여행 처음 가는 거 티 내네. 하긴 나도 그랬었지." - "해외요형 처음 가는 거 티 내네. 하긴 내도 그랬었지."
+    for i in range(len(voice_table)):
+        if(len(voice_table[i])!=len(script_table[i])):
+            return True
+
+    # 말하다 만 경우 - ex) 그렇구나. 우리 팀에서 그룹 과제 같이 하자. - 그렇구나 
+    if(len(voice_table)!=len(script_table)): 
+        return False
+
+    # 극단적으로 더 많이 말한 경우 처리 - ????????????
     return False
 
 if __name__=="__main__":
