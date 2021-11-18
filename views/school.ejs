@@ -190,14 +190,24 @@
                                 <p id="speech_to_text"></p>
 
                                 <form method="post" action="/school">
-                                    <input id="sentence" type="hidden" name="sentence" value= "그렇구나">
+                                    <input id="sentence" type="hidden" name="sentence">
                                     <input id="voice" type="hidden" name="voice">
-                                    <button type="submit">정확도확인</button>
+                                    <button type="submit" class="btn btn-success btn-rounded btn-fw"> 정확도확인 </button>
                                 </form>
+
+                                <%if(typeof percent !=="undefined" ){%>
+                                    <h1 class="display-5">
+                                        <%= percent %> %
+                                    </h1>
+                                    <%}%>
+
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
 
                 <!-- Prev, Nect Button -->
                 <div class="row">

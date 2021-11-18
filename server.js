@@ -41,6 +41,19 @@ app.get('/school', function (req, res) {
   res.render('school');
 });
 
+app.post('/school', function (req, res) {
+  console.log(req.body);
+  const result = spawn('python', [
+    'hayanzip.py',
+    req.body.sentence,
+    '요번 그룹 과제 팀원 혹시 다 뽑았니'// req.body.voice
+  ]);
+  result.stdout.on('data', (data) => {
+    console.log(JSON.parse(data));
+    res.render('school', JSON.parse(data));
+  });
+});
+
 app.get('/restaurant', function (req, res) {
   res.sendFile(path.join(__dirname, './views/restaurant.html'));
 });
@@ -113,13 +126,4 @@ app.get('/colloquial.json', (req, res) => {
   res.sendFile(path.join(__dirname, './assets/json/colloquial.json'));
 });
 
-app.post('/school', function (req, res) {
-  const result = spawn('python', [
-    'hayanzip.py',
-    '그렇구나. 우리 팀에서 그룹 과제 같이 하자.',
-    req.body.sentence,
-  ]);
-  result.stdout.on('data', (data) => {
-    res.send(JSON.parse(data));
-  });
-});
+

@@ -23,6 +23,9 @@ def main(ans,speak):
     script_table = [] # 정답 예문
     voice_table = [] # speech recognition으로 받은 문장
     falseWord = {} 
+    totalcount = 0 # 총 형태소 수?
+    falsecount = 0 # 틀린 형태소 수?
+    percent = 0.00
 
     script_table = mecab.morphs(ans)
     # print("\nscript_table =", end=" ")
@@ -38,20 +41,26 @@ def main(ans,speak):
 
     # 각 테이블 비교해 틀린 부분 추출
     for i in range(len(voice_table)):
+        totalcount += 1 
         if(voice_table[i]!=script_table[i]):
             temp = []
             for j in range(len(voice_table[i])):
                 if voice_table[i][j] != script_table[i][j]:
                     temp.append(voice_table[i][j])
+                    falsecount += 1
             falseWord[voice_table[i]] = temp
     
     # print(falseWord)
 
+    percent = (totalcount - falsecount)/totalcount * 100
+
     data = {  # Json으로 넘길 data 생성
         'script_table': script_table, # 예문 형태소 분석 결과 
         'voice_table': voice_table, # 사용자가 말한 문장 형태소 분석 결과
-        'false':falseWord # 틀린 부분 "틀린 형태소": "틀린 글자"
+        'false':falseWord, # 틀린 부분 "틀린 형태소": "틀린 글자"
+        'percent' : percent # 정확도
     }
+
     print(json.dumps(data))
 
 # script_table과 형식 맞추기

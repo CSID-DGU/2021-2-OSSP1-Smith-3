@@ -1,5 +1,4 @@
 
-
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
 // 인스턴스 생성
@@ -19,31 +18,33 @@ recognition.continuous = true;
 recognition.maxAlternatives = 100000;
 
 const speech_to_text = document.getElementById("speech_to_text");
+const voice = document.getElementById("voice");
 
 let speechToText = "";
 
 recognition.addEventListener("result", (e) => {
-    
-let interimTranscript = "";
-for (let i = e.resultIndex, len = e.results.length; i < len; i++) {
-    let transcript = e.results[i][0].transcript;
-    console.log(transcript);
-    if (e.results[i].isFinal) {
-    speechToText += transcript;
-    } else {
-    interimTranscript += transcript;
+
+    let interimTranscript = "";
+    for (let i = e.resultIndex, len = e.results.length; i < len; i++) {
+        let transcript = e.results[i][0].transcript;
+        console.log(transcript);
+        if (e.results[i].isFinal) {
+            speechToText += transcript;
+        } else {
+            interimTranscript += transcript;
+        }
     }
-}
-speech_to_text.innerHTML = speechToText + interimTranscript;
+    speech_to_text.innerHTML = speechToText + interimTranscript;
 });
 
 const btn_mic_toggle = document.getElementById("btn_mic_toggle");
 btn_mic_toggle.addEventListener("click", () => {
     // 음성 인식 켜져 있으면
-    if(is_mic_on) {
+    if (is_mic_on) {
         btn_mic_toggle.textContent = "연습 시작";
         is_mic_on = false;
         recognition.abort();
+        voice.value = speech_to_text.innerHTML;
     }
     // 꺼져 있으면
     else {
