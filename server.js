@@ -1,7 +1,14 @@
 var HTTP_PORT = process.env.PORT || 8080;
+var bodyParser = require('body-parser');
 var express = require('express');
 var path = require('path');
 var app = express();
+var spawn = require('child_process').spawn;
+
+app.set('view engine', 'ejs');
+app.use(express.static('./assets/'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 function onHttpStart() {
   console.log('Express http server listening on ' + HTTP_PORT);
@@ -31,7 +38,7 @@ app.get('/exercise', function (req, res) {
 });
 
 app.get('/school', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/school.html'));
+  res.render('school');
 });
 
 app.get('/restaurant', function (req, res) {
@@ -104,4 +111,15 @@ app.get('/tonguetwister.json', (req, res) => {
 
 app.get('/colloquial.json', (req, res) => {
   res.sendFile(path.join(__dirname, './assets/json/colloquial.json'));
+});
+
+app.post('/school', function (req, res) {
+  const result = spawn('python', [
+    'hayanzip.py',
+    '그렇구나. 우리 팀에서 그룹 과제 같이 하자.',
+    req.body.sentence,
+  ]);
+  result.stdout.on('data', (data) => {
+    res.send(JSON.parse(data));
+  });
 });
