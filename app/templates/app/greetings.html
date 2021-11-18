@@ -5,7 +5,7 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <title>Mr. Smith from Switzerland</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href='{% static "vendors/mdi/css/materialdesignicons.min.css" %}'>
@@ -14,7 +14,7 @@
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href='{% static "vendors/jquery-bar-rating/css-stars.css" %}'/>
-  <link rel="stylesheet" href='{% static "vendors/font-awesome/css/font-awesome.min.css" %}' />
+  <link rel="stylesheet" href='{% static "vendors/font-awesome/css/font-awesome.min.css" %}'/>
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <!-- endinject -->
@@ -34,7 +34,7 @@
                 <li class="nav-item nav-profile border-bottom">
                     <a href="/main" class="nav-link flex-column">
                         <div class="nav-profile-image">
-                            <img src="images/smith.png" alt="profile" />
+                            <img src='{% static "images/smith.png" %}' alt="profile" />
                             <!--change to offline or busy as needed-->
                         </div>
                         <div class="nav-profile-text d-flex ml-0 mb-3 flex-column">
@@ -96,7 +96,7 @@
                     <span class="mdi mdi-chevron-double-left"></span>
                 </button>
                 <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                    <a class="navbar-brand brand-logo-mini" href="/main"><img src="images/logo-mini.svg"
+                    <a class="navbar-brand brand-logo-mini" href="/main"><img src='{% static "images/logo-mini.svg" %}'
                             alt="logo" /></a>
                 </div>
                 <ul class="navbar-nav navbar-nav-right">
@@ -160,24 +160,20 @@
                 <!-- image card row starts here -->
                 
                 <div class="row">
-                    <form id="input" method="post">
-                        <div class="col-md-6 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-
-                                    <h4 class="card-title"></h4>
-                                    <p class="card-description kor-sentence" style="text-align: center; font-size: 18px; color: black; font-weight: bold;">Basic form layout</p>
-                                    <p class="card-description eng-description" style="text-align: center; font-size: 14px;">Basic form layout</p> 
-
-                                </div>
-                            </div>
-                            <input class="btn" type="submit" value="분석하기">
-                        </div>
-                    </form>
                     <div class="col-md-6 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
 
+                                 <h4 class="card-title"></h4>
+                                <p class="card-description kor-sentence" style="text-align: center; font-size: 18px; color: black; font-weight: bold;">Basic form layout</p>
+                                <p class="card-description eng-description" style="text-align: center; font-size: 14px;">Basic form layout</p> 
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
                                 <div class="d-flex justify-content-between flex-wrap">
                                     <div>
                                         <div class="card-title mb-0">발음 연습하기</div>
@@ -228,7 +224,7 @@
     <!-- container-scroller -->
 
     <!-- 음성인식을 위한 js파일 -->
-    <script src="js-new/speech-recognition.js"></script>
+    <script src='{% static "js-new/speech-recognition.js" %}'></script>
     <!-- plugins:js -->
     <script src='{% static "vendors/js/vendor.bundle.base.js" %}'></script>
     <!-- endinject -->
