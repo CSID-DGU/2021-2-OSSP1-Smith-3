@@ -44,9 +44,9 @@ app.get('/school', function (req, res) {
 app.post('/school', function (req, res) {
   console.log(req.body);
   const result = spawn('python', [
-    'hayanzip.py',
+    'view.py',
     req.body.sentence,
-    '요번 그룹 과제 팀원 혹시 다 뽑았니'// req.body.voice
+    '요번 그룹 과제 팀원 혹시 다 뽑았니', // req.body.voice
   ]);
   result.stdout.on('data', (data) => {
     console.log(JSON.parse(data));
@@ -125,5 +125,3 @@ app.get('/tonguetwister.json', (req, res) => {
 app.get('/colloquial.json', (req, res) => {
   res.sendFile(path.join(__dirname, './assets/json/colloquial.json'));
 });
-
-
