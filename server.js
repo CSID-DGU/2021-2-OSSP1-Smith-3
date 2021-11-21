@@ -1,7 +1,14 @@
 var HTTP_PORT = process.env.PORT || 8080;
+var bodyParser = require('body-parser');
 var express = require('express');
 var path = require('path');
 var app = express();
+var spawn = require('child_process').spawn;
+
+app.set('view engine', 'ejs');
+app.use(express.static('./assets/'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 function onHttpStart() {
   console.log('Express http server listening on ' + HTTP_PORT);
@@ -31,7 +38,20 @@ app.get('/exercise', function (req, res) {
 });
 
 app.get('/school', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/school.html'));
+  res.render('school');
+});
+
+app.post('/school', function (req, res) {
+  console.log(req.body);
+  const result = spawn('python', [
+    'view.py',
+    req.body.sentence,
+    '삼성전자주식회사는 전자 제품을 생산하며 정보통신기술에 대한 개발을 진행하고 있는 대한민국의 기업이다', // req.body.voice
+  ]);
+  result.stdout.on('data', (data) => {
+    console.log(JSON.parse(data));
+    res.render('school', JSON.parse(data));
+  });
 });
 
 app.get('/restaurant', function (req, res) {
