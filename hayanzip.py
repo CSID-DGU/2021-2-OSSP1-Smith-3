@@ -13,18 +13,18 @@ global voice_table
 script_table = []
 voice_table = []
 
-def main(ans,speak):
+
+def main(ans, speak):
     global script_table
     global voice_table
 
-    
     mecab = Mecab()
 
-    script_table = [] # 정답 예문
-    voice_table = [] # speech recognition으로 받은 문장
-    falseWord = {} 
-    totalcount = 0 # 총 형태소 수?
-    falsecount = 0 # 틀린 형태소 수?
+    script_table = []  # 정답 예문
+    voice_table = []  # speech recognition으로 받은 문장
+    falseWord = {}
+    totalcount = 0  # 총 형태소 수
+    correctcount = 0  # 일치하는 형태소 수
     percent = 0.00
 
     script_table = mecab.morphs(ans)
@@ -33,95 +33,106 @@ def main(ans,speak):
     voice_table = mecab.morphs(speak)
     # print("voice_table =", end=" ")
     # print(voice_table)
-    #print(len(voice_table))
-    
-    # 비교 쉽게 하기 위해 형식 맞추기 
-    if len(voice_table)!=len(script_table):
+    # print(len(voice_table))
+
+    # 비교 쉽게 하기 위해 형식 맞추기
+    if len(voice_table) != len(script_table):
         reconstruct()
+
+    # 토탈 카운트 세기
+    for i in range(len(script_table)):
+        totalcount += 1
 
     # 각 테이블 비교해 틀린 부분 추출
     for i in range(len(voice_table)):
-        totalcount += 1 
-        if(voice_table[i]!=script_table[i]):
+        if(voice_table[i] != script_table[i]):
             temp = []
             for j in range(len(voice_table[i])):
                 if voice_table[i][j] != script_table[i][j]:
                     temp.append(voice_table[i][j])
-                    falsecount += 1
             falseWord[voice_table[i]] = temp
-    
+        else:
+            correctcount += 1
+            
     # print(falseWord)
 
-    percent = (totalcount - falsecount)/totalcount * 100
+    percent = correctcount/totalcount * 100
 
     data = {  # Json으로 넘길 data 생성
-        'script_table': script_table, # 예문 형태소 분석 결과 
-        'voice_table': voice_table, # 사용자가 말한 문장 형태소 분석 결과
-        'false':falseWord, # 틀린 부분 "틀린 형태소": "틀린 글자"
-        'percent' : percent # 정확도
+        'sentence': ans,  # 원본 예문문장
+        'voice': speak,  # 원본 음성인식문장
+        'script_table': script_table,  # 예문 형태소 분석 결과
+        'voice_table': voice_table,  # 사용자가 말한 문장 형태소 분석 결과
+        'false': falseWord,  # 틀린 부분 "틀린 형태소": "틀린 글자"
+        'percent': percent  # 정확도
     }
 
     print(json.dumps(data))
 
 # script_table과 형식 맞추기
+
+
 def reconstruct():
-    idx = 0 
-    i =0
+    idx = 0
+    i = 0
 
     while needReconstruct():
-        if voice_table[i] != script_table[idx]: # voice가 더 쪼개짐 ex) script[idx]= '해외여행' voice[idx] = '해외'
-            if len(script_table[idx])>len(voice_table[i]):
+        # voice가 더 쪼개짐 ex) script[idx]= '해외여행' voice[idx] = '해외'
+        if voice_table[i] != script_table[idx]:
+            if len(script_table[idx]) > len(voice_table[i]):
                 diff = len(script_table[idx])-len(voice_table[i])
                 #print("diff = " + str(diff))
-                while diff>0:
+                while diff > 0:
                     if len(voice_table[i+1]) >= diff:
-                        voice_table[i] = voice_table[i]+voice_table[i+1][0:diff]
+                        voice_table[i] = voice_table[i] + \
+                            voice_table[i+1][0:diff]
                         voice_table[i+1] = voice_table[i+1][diff:]
-                        if(voice_table[i+1]==''):
+                        if(voice_table[i+1] == ''):
                             del voice_table[i+1]
-                            i+=1
+                            i += 1
                             diff = 0
                     else:
                         voice_table[i] += voice_table[i+1][0:]
                         diff -= len(voice_table[i+1])
                         del voice_table[i+1]
-                #print(voice_table)
+                # print(voice_table)
                 #print("i = "+str(i))
-                idx +=1
-            elif len(script_table[idx])<len(voice_table[i]): # voice가 덜 쪼개짐 ex) script[idx]= '해외' voice[idx] = '해외여행'
+                idx += 1
+            # voice가 덜 쪼개짐 ex) script[idx]= '해외' voice[idx] = '해외여행'
+            elif len(script_table[idx]) < len(voice_table[i]):
                 #print(str(i)+"번째 요소를 다시 쪼갭니다")
-                diff = len(voice_table[i])- len(script_table[idx])
-                voice_table.insert(i+1,voice_table[i][0:diff])
-                voice_table.insert(i+2,voice_table[i][diff:])
+                diff = len(voice_table[i]) - len(script_table[idx])
+                voice_table.insert(i+1, voice_table[i][0:diff])
+                voice_table.insert(i+2, voice_table[i][diff:])
                 del voice_table[i]
-                idx+=1
-                i+=1
-                #print(voice_table)
-                    
-                
+                idx += 1
+                i += 1
+                # print(voice_table)
+
+
 def needReconstruct():
     # 적당히 틀린 경우 여기서 걸러 낼 수 있음
     # ex) "해외여행 처음 가는 거 티 내네. 하긴 나도 그랬었지." - "해외요형 처음 가는 거 티 내네. 하긴 내도 그랬었지."
     for i in range(len(voice_table)):
-        if(len(voice_table[i])!=len(script_table[i])):
+        if(len(voice_table[i]) != len(script_table[i])):
             return True
 
-    # 말하다 만 경우 - ex) 그렇구나. 우리 팀에서 그룹 과제 같이 하자. - 그렇구나 
-    if(len(voice_table)!=len(script_table)): 
+    # 말하다 만 경우 - ex) 그렇구나. 우리 팀에서 그룹 과제 같이 하자. - 그렇구나
+    if(len(voice_table) != len(script_table)):
         return False
 
     # 극단적으로 더 많이 말한 경우 처리 - ????????????
     return False
 
-if __name__=="__main__":
-    main(sys.argv[1], sys.argv[2]) # argv[1]: 예문,  argv[2]: 연습
+
+if __name__ == "__main__":
+    main(sys.argv[1], sys.argv[2])  # argv[1]: 예문,  argv[2]: 연습
 
 #===================================================================================================#
 #===================================================================================================#
 #===================================================================================================#
 #===================================================================================================#
 #===================================하얀집 코드======================================================#
-
 
 
 # def super_compare(script_index, voice_sentence, one_sentence):
@@ -823,5 +834,3 @@ if __name__=="__main__":
 #         neg_flag.append(0)  # 긍정
 
 #     return neg_flag
-
-
