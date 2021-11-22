@@ -160,16 +160,12 @@
                     <div class="col-md-6 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-
-
                                 <h4 class="card-title"></h4>
                                 <p class="card-description kor-sentence"
                                     style="text-align: center; font-size: 18px; color: black; font-weight: bold;">
-                                    Basic
-                                    form layout</p>
+                                </p>
                                 <p class="card-description eng-description"
-                                    style="text-align: center; font-size: 14px;">Basic form layout</p>
-
+                                    style="text-align: center; font-size: 14px;"></p>
                             </div>
                         </div>
                     </div>
@@ -187,8 +183,31 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p id="speech_to_text"></p>
+                                <a id="speech_to_text"></a>
+                                    <%var flag = 0;%>
+                                    <%if(typeof voice_table !=="undefined" ){%>
+                                        <% voice_table.forEach(function(voice) { %>
+                                            <% false_new.forEach(function(fal) { %>
 
+                                                <%if(voice == fal ){%>
+                                                    <% flag = 1; %>
+                                                <%}%>
+
+                                            <% }) %>
+
+                                            <%if(flag == 1 ){%>
+                                                <a style="color:red;">
+                                                <%= voice %>
+                                                </a>
+                                            <%}else{%>
+                                                <a style="color:green;">
+                                                <%= voice %>
+                                                </a>
+                                            <%}%>
+                                            <%flag = 0;%>
+                                        <% }) %>
+                                    <%}%>
+                                
                                 <form method="post" action="/school">
                                     <input id="sentence" type="hidden" name="sentence">
                                     <input id="voice" type="hidden" name="voice">
