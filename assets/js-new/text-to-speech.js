@@ -1,0 +1,1 @@
+const btn_tts = document.querySelector('.btn_tts');
