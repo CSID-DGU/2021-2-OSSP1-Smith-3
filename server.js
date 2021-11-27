@@ -70,7 +70,20 @@ app.get('/hospital', function (req, res) {
 });
 
 app.get('/shopping', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/shopping.html'));
+  res.render('shopping');
+});
+
+app.post('/shopping', function (req, res) {
+  console.log(req.body);
+  const result = spawn('python', [
+    'view.py',
+    req.body.sentence,
+    '휴대전화 배터리 소모가 빨라요', // req.body.voice
+  ]);
+  result.stdout.on('data', (data) => {
+    console.log(JSON.parse(data));
+    res.render('shopping', JSON.parse(data));
+  });
 });
 // ---------------------------------------------------
 app.get('/practice', function (req, res) {
