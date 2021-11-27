@@ -96,7 +96,20 @@ app.post('/greetings', function (req, res) {
 // ---------------------------------------------------
 
 app.get('/travel', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/travel.html'));
+  res.render('travel');
+});
+
+app.post('/travel', function (req, res) {
+  console.log(req.body);
+  const result = spawn('python', [
+    'view.py',
+    req.body.sentence,
+    '우리 7월에 여행 가기로 한 거 어디 갈지 경청했어?', // req.body.voice
+  ]);
+  result.stdout.on('data', (data) => {
+    console.log(JSON.parse(data));
+    res.render('travel', JSON.parse(data));
+  });
 });
 
 // ---------------------------------------------------
