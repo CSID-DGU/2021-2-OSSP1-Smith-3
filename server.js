@@ -37,6 +37,8 @@ app.get('/exercise', function (req, res) {
   res.sendFile(path.join(__dirname, './views/exercise.html'));
 });
 
+// ---------------------------------------------------
+
 app.get('/school', function (req, res) {
   res.render('school');
 });
@@ -54,21 +56,42 @@ app.post('/school', function (req, res) {
   });
 });
 
+// ---------------------------------------------------
+
 app.get('/restaurant', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/restaurant.html'));
+  res.render('restaurant');
 });
+
+app.post('/restaurant', function (req, res) {
+  console.log(req.body);
+  const result = spawn('python', [
+    'view.py',
+    req.body.sentence,
+    '가위, 바위, 보해서 이긴 사랑이 먹고 싶은 메뉴 고르자.', // req.body.voice
+  ]);
+  result.stdout.on('data', (data) => {
+    console.log(JSON.parse(data));
+    res.render('restaurant', JSON.parse(data));
+  });
+});
+
+// ---------------------------------------------------
 app.get('/greetings', function (req, res) {
   res.sendFile(path.join(__dirname, './views/greetings.html'));
 });
+
+// ---------------------------------------------------
 
 app.get('/travel', function (req, res) {
   res.sendFile(path.join(__dirname, './views/travel.html'));
 });
 
+// ---------------------------------------------------
 app.get('/hospital', function (req, res) {
   res.sendFile(path.join(__dirname, './views/hospital.html'));
 });
 
+// ---------------------------------------------------
 app.get('/shopping', function (req, res) {
   res.render('shopping');
 });
