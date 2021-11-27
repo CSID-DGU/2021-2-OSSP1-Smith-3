@@ -114,7 +114,20 @@ app.post('/travel', function (req, res) {
 
 // ---------------------------------------------------
 app.get('/hospital', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/hospital.html'));
+  res.render('hospital');
+});
+
+app.post('/hospital', function (req, res) {
+  console.log(req.body);
+  const result = spawn('python', [
+    'view.py',
+    req.body.sentence,
+    '귀 안족에 통증이 있어요', // req.body.voice
+  ]);
+  result.stdout.on('data', (data) => {
+    console.log(JSON.parse(data));
+    res.render('hospital', JSON.parse(data));
+  });
 });
 
 // ---------------------------------------------------
