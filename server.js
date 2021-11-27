@@ -77,7 +77,20 @@ app.post('/restaurant', function (req, res) {
 
 // ---------------------------------------------------
 app.get('/greetings', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/greetings.html'));
+  res.render('greetings');
+});
+
+app.post('/greetings', function (req, res) {
+  console.log(req.body);
+  const result = spawn('python', [
+    'view.py',
+    req.body.sentence,
+    '안뇽하세요.저는 미국에서 온 타일러입니다.만나서 반갑습니다.', // req.body.voice
+  ]);
+  result.stdout.on('data', (data) => {
+    console.log(JSON.parse(data));
+    res.render('greetings', JSON.parse(data));
+  });
 });
 
 // ---------------------------------------------------
