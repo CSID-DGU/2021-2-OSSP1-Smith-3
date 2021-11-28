@@ -44,13 +44,13 @@ app.get('/school', function (req, res) {
 app.post('/school', function (req, res) {
   console.log(req.body);
   const result = spawn('python', [
-    'view.py',
+    'jamo_ver.py',
     req.body.sentence,
-    '삼성전자주식회사는 전자 제품을 생산하며 정보통신기술에 대한 개발을 진행하고 있는 대한민국의 기업이다', // req.body.voice
+    '이번 그룹 과제 티몬 다 뽑았어', // req.body.voice
   ]);
   result.stdout.on('data', (data) => {
     console.log(JSON.parse(data));
-    res.render('school', JSON.parse(data));
+    res.send(JSON.parse(data));
   });
 });
 
