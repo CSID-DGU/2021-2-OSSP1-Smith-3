@@ -44,6 +44,10 @@ def mainjamo(ans, speak):
     false_table = {} 
     script_table = {}
     voice_table ={}
+    voice_new=[]
+    false_new = []
+    percent = 0.00
+
     #print(j2hcj(h2j("밭이랑에")))
     #print(mecab.pos("밭이랑에"))
     #print(mecab.pos("밭이랑에 물이 고였다"))
@@ -52,9 +56,11 @@ def mainjamo(ans, speak):
     # 어절 자르기
     for idx, key in enumerate(ans.split(' ')):
         script_table[idx] = {key:0}
+        
 
     for idx,key in enumerate(speak.split(' ')):
         voice_table[idx] = {key:[]}
+        voice_new.append(key)
 
     set_compare_pair()
     # print(script_table)
@@ -82,6 +88,7 @@ def mainjamo(ans, speak):
                     false_table[v_idx][v_word] = "correct"
                 else:
                     false_table[v_idx][v_word] = false_syllable
+                    false_new.append(v_word)
             else:
                 rest = len(v_word)
                 skip = 0
@@ -97,9 +104,11 @@ def mainjamo(ans, speak):
                     else:
                         for key, val in false_syllable.items():
                             false_table[v_idx][v_word][key] = val
+                        false_new.append(v_word)
 
                     if skip >= len(v_word)-1:
                         break
+    
 
 
     # for word, target in zip(script_table,voice_table):
@@ -107,7 +116,17 @@ def mainjamo(ans, speak):
     #     jamo_target = h2j(target)
     #     compare(jamo_word, jamo_target)
     
-    print(json.dumps(false_table))
+    data = {  # Json으로 넘길 data 생성
+        'script_table': script_table, # 예문 형태소 분석 결과 
+        'voice_table': voice_table, # 사용자가 말한 문장 형태소 분석 결과
+        'false_table':false_table,
+        'voice_new': voice_new,
+        'false_new' : false_new,
+        'percent' : percent
+    }
+
+
+    print(json.dumps(data))
 
 
 def set_compare_pair():

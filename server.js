@@ -46,11 +46,11 @@ app.post('/school', function (req, res) {
   const result = spawn('python', [
     'jamo_ver.py',
     req.body.sentence,
-    '이번 그룹 과제 티몬 다 뽑았어', // req.body.voice
+    '요번 그룹 과제 티몬 다 뽑았어', // req.body.voice
   ]);
   result.stdout.on('data', (data) => {
     console.log(JSON.parse(data));
-    res.send(JSON.parse(data));
+    res.render('school',JSON.parse(data));
   });
 });
 
