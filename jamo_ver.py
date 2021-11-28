@@ -69,12 +69,12 @@ def mainjamo(ans, speak):
             false_syllable = {}
             if s_words[0]=="UNKNOWN":
                 # 다 틀림
-                for v_idx, v in enumerate(split_syllable(h2j(v_word))):
-                    false_syllable[v_word] = []
-                    false_syllable[v_word].append(j2hcj(v[0]))
-                    false_syllable[v_word].append(j2hcj(v[1]))
+                for v in split_syllable(h2j(v_word)):
+                    false_syllable[join_jamos(v)] = []
+                    false_syllable[join_jamos(v)].append(j2hcj(v[0]))
+                    false_syllable[join_jamos(v)].append(j2hcj(v[1]))
                     if len(v)==3:
-                        false_syllable[v_idx][v_idx].append(j2hcj(v[2]))
+                        false_syllable[join_jamos(v)].append(j2hcj(v[2]))
                 false_table[v_idx][v_word] = false_syllable
             elif len(s_words)==1:
                 correct, false_syllable = compare_start(s_words[0], v_word,0)
