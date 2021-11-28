@@ -44,13 +44,13 @@ app.get('/school', function (req, res) {
 app.post('/school', function (req, res) {
   console.log(req.body);
   const result = spawn('python', [
-    'view.py',
+    'jamo_ver.py',
     req.body.sentence,
-    req.body.voice,
+    '요번 그룹 과제 티몬 다 뽑았어', // req.body.voice
   ]);
   result.stdout.on('data', (data) => {
     console.log(JSON.parse(data));
-    res.render('school', JSON.parse(data));
+    res.render('school',JSON.parse(data));
   });
 });
 
