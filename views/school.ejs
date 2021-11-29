@@ -79,25 +79,17 @@
                                 </div>
                                 <a id="speech_to_text"></a>
                                 
-                                <form>
+                                <form method="POST" action="/school">
                                     <input id="sentence" type="hidden" name="sentence">
                                     <input id="voice" type="hidden" name="voice">
-                                    <button type="submit" class="btn btn-success btn-rounded btn-fw calc"> 정확도확인 </button>
+                                    <button type="button" class="btn btn-success btn-rounded btn-fw calc"> 정확도확인 </button>
                                 </form>
-
-                                <%if(typeof percent !=="undefined" ){%>
-                                    <h1 class="display-5">
-                                        <%= percent %> %
-                                    </h1>
-                                    <%}%>
+                                    <h1 class="display-5" id="correct"></h1>
 
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
 
                 <!-- Prev, Nect Button -->
                 <%- include ('partials/_btn.html') %>
@@ -119,18 +111,22 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script>
-        $('.calc').click((e)=>{
+        $('.calc').click(()=>{
+            //e.preventDefault();
             $.ajax({
                 method: 'POST',
                 url: '/school',
                 data : {
-                    sentence :$('#sentence').value,
-                    voice: $('#voice').value,
-                }
+                    "sentence" :$('#sentence').value,
+                    "voice": $('#voice').value,
+                },
+                dataType: 'json'
             }).done((res)=>{
-                console.log("성공")
+                console.log("성공");
+                
+                $('#correct').html(res.percent);
             }).fail((xhr,code,err)=>{
-                console.log("err")
+                console.log(err);
             })
 
         })

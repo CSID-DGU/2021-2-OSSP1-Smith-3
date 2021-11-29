@@ -42,7 +42,8 @@ app.get('/school', function (req, res) {
 });
 
 app.post('/school', function (req, res) {
-  console.log(req.body);
+  console.log(req.body.sentence);
+  console.log(req.body.voice);
   const result = spawn('python', [
     'jamo_ver.py',
     req.body.sentence,
@@ -50,7 +51,8 @@ app.post('/school', function (req, res) {
   ]);
   result.stdout.on('data', (data) => {
     console.log(JSON.parse(data));
-    res.render('school',JSON.parse(data));
+    //res.render('school', JSON.parse(data));
+    res.json(JSON.parse(data));
   });
 });
 
