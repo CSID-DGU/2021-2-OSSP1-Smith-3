@@ -47,7 +47,7 @@ app.post('/school', function (req, res) {
   const result = spawn('python', [
     'jamo_ver.py',
     req.body.sentence,
-    '요번 그룹 과제 티몬 다 뽑았어', // req.body.voice
+    '요번 그룹 과제 티몬 혹시 다 뽑았어?', // req.body.voice
   ]);
   result.stdout.on('data', (data) => {
     console.log(JSON.parse(data));

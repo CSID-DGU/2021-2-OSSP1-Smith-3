@@ -45,7 +45,7 @@ def mainjamo(ans, speak):
     script_table = {}
     voice_table ={}
     voice_new=[]
-    false_new = []
+    false_new = {}
     percent = 0.00
 
     #print(j2hcj(h2j("밭이랑에")))
@@ -88,7 +88,7 @@ def mainjamo(ans, speak):
                     false_table[v_idx][v_word] = "correct"
                 else:
                     false_table[v_idx][v_word] = false_syllable
-                    false_new.append(v_word)
+
             else:
                 rest = len(v_word)
                 skip = 0
@@ -104,13 +104,15 @@ def mainjamo(ans, speak):
                     else:
                         for key, val in false_syllable.items():
                             false_table[v_idx][v_word][key] = val
-                        false_new.append(v_word)
 
                     if skip >= len(v_word)-1:
                         break
+                
+            if not false_table[v_idx][v_word]== "correct":
+                false_new[v_idx] = v_word
     
 
-
+    
     # for word, target in zip(script_table,voice_table):
     #     jamo_word = h2j(word)
     #     jamo_target = h2j(target)
