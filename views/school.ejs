@@ -127,7 +127,7 @@
                     $('#speech_to_text').append(`<span style="color:red"> 아무것도 말하지 않았어요 ㅜ.ㅜ </span>`)
                 }
                 else{
-                    $('#correct').html(res.percent);
+                    $('#correct').html(res.percent + "%");
                     $.each(res.voice_new, (idx, word)=>{
                     if (res.false_new[idx]!== undefined){
                         $('#speech_to_text').append(`<span style="color:red">${word} </span>`)
