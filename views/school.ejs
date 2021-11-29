@@ -78,34 +78,11 @@
                                     </div>
                                 </div>
                                 <a id="speech_to_text"></a>
-                                    <%var flag = 0;%>
-                                    <%if(typeof voice_new !=="undefined" ){%>
-                                        <% voice_new.forEach(function(voice) { %>
-                                            <% false_new.forEach(function(fal) { %>
-
-                                                <%if(voice == fal ){%>
-                                                    <% flag = 1; %>
-                                                <%}%>
-
-                                            <% }) %>
-
-                                            <%if(flag == 1 ){%>
-                                                <a style="color:red;">
-                                                <%= voice %>
-                                                </a>
-                                            <%}else{%>
-                                                <a style="color:green;">
-                                                <%= voice %>
-                                                </a>
-                                            <%}%>
-                                            <%flag = 0;%>
-                                        <% }) %>
-                                    <%}%>
                                 
-                                <form method="post" action="/school">
+                                <form>
                                     <input id="sentence" type="hidden" name="sentence">
                                     <input id="voice" type="hidden" name="voice">
-                                    <button type="submit" class="btn btn-success btn-rounded btn-fw"> 정확도확인 </button>
+                                    <button type="submit" class="btn btn-success btn-rounded btn-fw calc"> 정확도확인 </button>
                                 </form>
 
                                 <%if(typeof percent !=="undefined" ){%>
@@ -123,42 +100,13 @@
 
 
                 <!-- Prev, Nect Button -->
-                <div class="row">
-                    <div class="col-md-12 grid-margin stretch-card">
-                        <div class="d-flex justify-content-between flex-wrap">
-                            <div>
-                                <button type="button" class="btn btn-primary btn-rounded btn-icon"
-                                    style="margin: 0;position: absolute;top: 50%;left: 40%;" id='prev-bt' name='btn'>
-                                    <i class="mdi mdi-arrow-left-bold"></i>
-                                </button>
-                                <button type="button" class="btn btn-primary btn-rounded btn-icon"
-                                    style="margin: 0;position: absolute; top: 50%;right: 40%;" id='next-bt' name='btn'>
-                                    <i class="mdi mdi-arrow-right-bold"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+                <%- include ('partials/_btn.html') %>
+                
             </div>
             <!-- content-wrapper ends -->
 
             <!-- partial:partials/_footer.html -->
-            <footer class="footer">
-                <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright ©
-                        bootstrapdash.com 2020</span>
-                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a
-                            href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a> from
-                        Bootstrapdash.com</span>
-                </div>
-
-                <div>
-                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block"> Distributed By: <a
-                            href="https://themewagon.com/" target="_blank">Themewagon</a></span>
-                </div>
-            </footer>
+            <%- include ('partials/_footer.html') %>
             <!-- partial -->
         </div>
         <!-- main-panel ends -->
@@ -167,10 +115,30 @@
     </div>
     <!-- container-scroller -->
 
+    <!-- For jQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $('.calc').click((e)=>{
+            $.ajax({
+                method: 'POST',
+                url: '/school',
+                data : {
+                    sentence :$('#sentence').value,
+                    voice: $('#voice').value,
+                }
+            }).done((res)=>{
+                console.log("성공")
+            }).fail((xhr,code,err)=>{
+                console.log("err")
+            })
+
+        })
+    </script>
 
     <!-- 음성인식을 위한 js파일 -->
     <script src="js-new/speech-recognition.js"></script>
-    
+
     <!-- plugins:js -->
     <script src="vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
