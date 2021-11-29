@@ -26,7 +26,6 @@ def mainjamo(ans, speak):
     # 예외 처리
     if len(speak)==0:
         return
-
     #---------------------------------------------------
 
     ans = remove_marks(ans).rstrip()

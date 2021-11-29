@@ -85,9 +85,6 @@
                                     <input id="voice" type="hidden" name="voice">
                                     <button type="button" class="btn btn-success btn-rounded btn-fw calc"> 정확도확인 </button>
                                 </form>
-                                <div id="result">
-                                    
-                                </div>
                                 <h1 class="display-5" id="correct"></h1>
 
                             </div>
@@ -117,7 +114,6 @@
     <script>
         $('.calc').click(()=>{
             //e.preventDefault();
-            console.log($('#sentence').val());
             $.ajax({
                 method: 'POST',
                 url: '/school',
@@ -125,21 +121,22 @@
                     "sentence" :$('#sentence').val(),
                     "voice": $('#voice').val(),
                 },
-                dataType: 'json'
             }).done((res)=>{
-                console.log("성공");
-                $('#result').html("");
-                $('#correct').html(res.percent);
-                $.each(res.voice_new, (idx, word)=>{
-                    console.log(word);
+                $('#speech_to_text').html("");
+                if(res=="error"){
+                    $('#speech_to_text').append(`<span style="color:red"> 아무것도 말하지 않았어요 ㅜ.ㅜ </span>`)
+                }
+                else{
+                    $('#correct').html(res.percent);
+                    $.each(res.voice_new, (idx, word)=>{
                     if (res.false_new[idx]!== undefined){
-                        $('#result').append(`<span style="color:red">${word} </span>`)
+                        $('#speech_to_text').append(`<span style="color:red">${word} </span>`)
                     }
                     else{
-                        $('#result').append(`<span style="color:green">${word} </span>`)
+                        $('#speech_to_text').append(`<span style="color:green">${word} </span>`)
                     }
                 })
-                
+                }
             }).fail((xhr,code,err)=>{
                 console.log(err);
             })
