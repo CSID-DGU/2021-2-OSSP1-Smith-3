@@ -43,6 +43,7 @@ def mainjamo(ans, speak):
     false_table = {}
     script_table = {}
     voice_table = {}
+    script_new = []
     voice_new = []
     false_new = {}
     totalcount = len(ans.replace(" ", ""))  # 총 글자 수
@@ -57,6 +58,7 @@ def mainjamo(ans, speak):
     # 어절 자르기
     for idx, key in enumerate(ans.split(' ')):
         script_table[idx] = {key: 0}
+        script_new.append(key)
 
     for idx, key in enumerate(speak.split(' ')):
         voice_table[idx] = {key: []}
@@ -128,6 +130,7 @@ def mainjamo(ans, speak):
         'script_table': script_table,  # 예문 형태소 분석 결과
         'voice_table': voice_table,  # 사용자가 말한 문장 형태소 분석 결과
         'false_table': false_table,
+        'script_new' : script_new,
         'voice_new': voice_new,
         'false_new': false_new,
         'percent': percent,
