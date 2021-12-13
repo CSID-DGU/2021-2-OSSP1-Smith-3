@@ -1,12 +1,15 @@
 const kor = document.querySelector('.kor-sentence');
 const eng = document.querySelector('.eng-description');
 const url = 'http://localhost:8080/colloquial.json';
+var sentence = document.getElementById('sentence');
 var nextbt = document.getElementById('next-bt');
 var prevbt = document.getElementById('prev-bt');
 var word1 = document.getElementById('word1');
 var word2 = document.getElementById('word2');
 var short = document.getElementById('short-description');
 var long = document.getElementById('long-description');
+var result = document.getElementById('speech_to_text');
+var correct = document.getElementById('correct');
 
 let idx = 0;
 fetch(url)
@@ -28,6 +31,9 @@ function showNext(data) {
   if (idx < 20) {
     idx++;
     editHtml(data);
+    result.innerHTML = '';
+    correct.innerHTML = '';
+    voice.value = '';
   }
   if (idx === 19) {
     nextbt.disabled = 'disabled';
@@ -53,4 +59,5 @@ function editHtml(data) {
   word2.innerHTML = data[idx].단어;
   short.innerHTML = data[idx].설명;
   long.innerHTML = data[idx].긴설명;
+  sentence.value = data[idx].예문;
 }

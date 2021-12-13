@@ -38,28 +38,30 @@
             <div class="content-wrapper pb-0">
                 <div class="page-header flex-wrap">
                     <div class="header-left">
-                        <h4> 학습예문 - 인사 </h4>
+                        <h4> 신조어 연습 </h4>
                     </div>
                 </div>
+
                 <div class="situation" style="margin: 10px 0px;">
-                    <h5>situation</h5>
+                    <h5 id="word1">라떼는 말이야(Ra-Tte-Neun-Mal-Ee-Ya)</h5>
                 </div>
                 <!-- first row starts here -->
                 <!-- image card row starts here -->
+
                 <div class="row">
                     <div class="col-md-6 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-
-
+                                
                                 <button class="btn_tts"><i class="fas fa-headphones"></i></button>
-        
 
                                 <p class="card-description kor-sentence"
                                     style="text-align: center; font-size: 18px; color: black; font-weight: bold;">
-                                </p>
+                                    라떼는 말이야 다 알아서 했어</p>
                                 <p class="card-description eng-description"
-                                    style="text-align: center; font-size: 14px;"></p>
+                                    style="text-align: center; font-size: 14px;">we did it all by ourselves back in my
+                                    day</p>
+                                    
                             </div>
                         </div>
                     </div>
@@ -78,19 +80,32 @@
                                     </div>
                                 </div>
                                 <a id="speech_to_text"></a>
-                                
-                                
-                                <form method="POST" action="/greetings">
+
+                                <form method="POST" action="/colloquial">
                                     <input id="sentence" type="hidden" name="sentence">
                                     <input id="voice" type="hidden" name="voice">
                                     <button type="button" class="btn btn-success btn-rounded btn-fw calc"> 정확도확인 </button>
                                 </form>
                                 <h1 class="display-5" id="correct"></h1>
-
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                  <div class="col-md-12 grid-margin stretch-card">
+                      <div class="card">
+                          <div class="card-body">
+                              <h4 class="card-title" id="word2">라떼는 말이야(Ra-tte-neun-mal-ee-ya)</h4>
+                              <h6 id="short-description">“in my day”</h6>
+                              <p class="card-description" id="long-description">나 때는 말이야 (Na-tte-neun-mal-ee-ya). Na-tte sounds similar to
+                                  latte, and mal is horse in Korean. It’s a sarcastic expression for 꼰대 (Kkondae, a
+                                  condescending person who is usually older, like “boomer”) who always says “in my
+                                  day”.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
                 <!-- Prev, Nect Button -->
                 <%- include ('partials/_btn.html') %>
@@ -116,7 +131,7 @@
             //e.preventDefault();
             $.ajax({
                 method: 'POST',
-                url: '/greetings',
+                url: '/colloquial',
                 data : {
                     "sentence" :$('#sentence').val(),
                     "voice": $('#voice').val(),
@@ -169,7 +184,7 @@
     <!-- Custom js for this page -->
     <script src="js/dashboard.js"></script>
     <!-- End custom js for this page -->
-    <script src="/scripts/greetings.js"></script>
+    <script src="/scripts/colloquial.js"></script>
     <!-- text-to-speech를 위한 js 파일 -->
     <script src="js-new/text-to-speech.js"></script>
 </body>
