@@ -26,7 +26,6 @@ def mainjamo(ans, speak):
     # 예외 처리
     if len(speak)==0:
         return
-
     #---------------------------------------------------
 
     ans = remove_marks(ans).rstrip()
@@ -45,7 +44,9 @@ def mainjamo(ans, speak):
     script_table = {}
     voice_table ={}
     voice_new=[]
-    false_new = []
+    false_new = {}
+    totalcount = len(ans.replace(" ","")) # 총 글자 수
+    falsecount = 0 # 틀린 글자 수
     percent = 0.00
 
     #print(j2hcj(h2j("밭이랑에")))
@@ -88,7 +89,7 @@ def mainjamo(ans, speak):
                     false_table[v_idx][v_word] = "correct"
                 else:
                     false_table[v_idx][v_word] = false_syllable
-                    false_new.append(v_word)
+
             else:
                 rest = len(v_word)
                 skip = 0
@@ -104,25 +105,32 @@ def mainjamo(ans, speak):
                     else:
                         for key, val in false_syllable.items():
                             false_table[v_idx][v_word][key] = val
-                        false_new.append(v_word)
 
                     if skip >= len(v_word)-1:
                         break
+                
+            if not false_table[v_idx][v_word]== "correct":
+                false_new[v_idx] = v_word
+                falsecount += len(v_word)
     
 
-
+    percent = round((totalcount - falsecount)/totalcount * 100,2)
+    
     # for word, target in zip(script_table,voice_table):
     #     jamo_word = h2j(word)
     #     jamo_target = h2j(target)
     #     compare(jamo_word, jamo_target)
     
+
     data = {  # Json으로 넘길 data 생성
         'script_table': script_table, # 예문 형태소 분석 결과 
         'voice_table': voice_table, # 사용자가 말한 문장 형태소 분석 결과
         'false_table':false_table,
         'voice_new': voice_new,
         'false_new' : false_new,
-        'percent' : percent
+        'percent' : percent,
+        'totalcount' : totalcount,
+        'falsecount': falsecount
     }
 
 

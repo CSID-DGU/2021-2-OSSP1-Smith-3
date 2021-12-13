@@ -2,9 +2,11 @@ const kor = document.querySelector('.kor-sentence');
 const situation = document.querySelector('.situation');
 const eng = document.querySelector('.eng-description');
 const url = 'http://localhost:8080/school.json';
-var sentence = document.getElementById("sentence");
+var sentence = document.getElementById('sentence');
 var nextbt = document.getElementById('next-bt');
 var prevbt = document.getElementById('prev-bt');
+var result = document.getElementById('speech_to_text');
+var correct = document.getElementById('correct');
 
 let idx = 0;
 fetch(url)
@@ -32,6 +34,9 @@ function showNext(data) {
     situation.innerHTML = data[idx].소분류;
     eng.innerHTML = data[idx].영어;
     sentence.value = data[idx].한국어;
+    result.innerHTML = '';
+    correct.innerHTML = '';
+    voice.value = '';
   }
   if (idx === 9) {
     nextbt.disabled = 'disabled';
@@ -46,6 +51,9 @@ function showPrev(data) {
     situation.innerHTML = data[idx].소분류;
     eng.innerHTML = data[idx].영어;
     sentence.value = data[idx].한국어;
+    result.innerHTML = '';
+    correct.innerHTML = '';
+    voice.value = '';
   }
 
   if (idx === 0) {
