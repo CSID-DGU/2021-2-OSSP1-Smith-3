@@ -46,7 +46,7 @@ def mainjamo(ans, speak):
     voice_new=[]
     false_new = {}
     totalcount = len(ans.replace(" ","")) # 총 글자 수
-    falsecount = 0 # 틀린 글자 수
+    truecount = 0 # 맞은 글자 수 설정
     percent = 0.00
 
     #print(j2hcj(h2j("밭이랑에")))
@@ -111,10 +111,12 @@ def mainjamo(ans, speak):
                 
             if not false_table[v_idx][v_word]== "correct":
                 false_new[v_idx] = v_word
-                falsecount += len(v_word)
+
+            if false_table[v_idx][v_word]== "correct":
+                truecount += len(v_word)
     
 
-    percent = round((totalcount - falsecount)/totalcount * 100,2)
+    percent = round(truecount/totalcount * 100,2)
     
     # for word, target in zip(script_table,voice_table):
     #     jamo_word = h2j(word)
@@ -130,7 +132,7 @@ def mainjamo(ans, speak):
         'false_new' : false_new,
         'percent' : percent,
         'totalcount' : totalcount,
-        'falsecount': falsecount
+        'truecount': truecount
     }
 
 
