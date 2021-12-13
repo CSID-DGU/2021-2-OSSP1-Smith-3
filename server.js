@@ -69,6 +69,10 @@ app.get('/colloquial', function (req, res) {
   res.render('colloquial');
 });
 
+app.get('/practice', function (req, res) {
+  res.render('practice');
+});
+
 app.post('/school', function (req, res) {
   //console.log(req.body.sentence);
   //console.log(req.body.voice);
@@ -222,12 +226,26 @@ app.post('/colloquial', function (req, res) {
   }
 });
 
-
-
-// ---------------------------------------------------
-app.get('/practice', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/practice.html'));
+app.post('/practice', function (req, res) {
+  //console.log(req.body.sentence);
+  //console.log(req.body.voice);
+  if (req.body.voice == '') {
+    res.send('error');
+  } else {
+    const result = spawn('python', [
+      'jamo_ver.py',
+      req.body.sentence,
+      req.body.voice, // req.body.voice
+    ]);
+    result.stdout.on('data', (data) => {
+      console.log(JSON.parse(data));
+      //res.render('school', JSON.parse(data));
+      res.json(JSON.parse(data));
+    });
+  }
 });
+
+
 
 // ---------------------------------------------------
 // setup http server to listen on HTTP_PORT
