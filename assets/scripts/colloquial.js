@@ -3,7 +3,8 @@ const eng = document.querySelector('.eng-description');
 const url = 'http://localhost:8080/colloquial.json';
 var nextbt = document.getElementById('next-bt');
 var prevbt = document.getElementById('prev-bt');
-var word = document.getElementById('word');
+var word1 = document.getElementById('word1');
+var word2 = document.getElementById('word2');
 var short = document.getElementById('short-description');
 var long = document.getElementById('long-description');
 
@@ -48,7 +49,8 @@ function showPrev(data) {
 function editHtml(data) {
   kor.innerHTML = data[idx].예문;
   eng.innerHTML = data[idx].예문번역;
-  word.innerHTML = data[idx].단어;
+  word1.innerHTML = data[idx].단어;
+  word2.innerHTML = data[idx].단어;
   short.innerHTML = data[idx].설명;
   long.innerHTML = data[idx].긴설명;
 }
