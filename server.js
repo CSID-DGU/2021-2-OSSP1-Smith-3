@@ -61,6 +61,10 @@ app.get('/shopping', function (req, res) {
   res.render('shopping');
 });
 
+app.get('/tonguetwister', function (req, res) {
+  res.render('tonguetwister');
+});
+
 app.post('/school', function (req, res) {
   //console.log(req.body.sentence);
   //console.log(req.body.voice);
@@ -176,16 +180,30 @@ app.post('/shopping', function (req, res) {
   }
 });
 
+app.post('/tonguetwister', function (req, res) {
+  //console.log(req.body.sentence);
+  //console.log(req.body.voice);
+  if (req.body.voice == '') {
+    res.send('error');
+  } else {
+    const result = spawn('python', [
+      'jamo_ver.py',
+      req.body.sentence,
+      req.body.voice, // req.body.voice
+    ]);
+    result.stdout.on('data', (data) => {
+      console.log(JSON.parse(data));
+      //res.render('school', JSON.parse(data));
+      res.json(JSON.parse(data));
+    });
+  }
+});
+
 
 
 // ---------------------------------------------------
 app.get('/practice', function (req, res) {
   res.sendFile(path.join(__dirname, './views/practice.html'));
-});
-
-// ---------------------------------------------------
-app.get('/tonguetwister', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/tonguetwister.html'));
 });
 
 // ---------------------------------------------------
