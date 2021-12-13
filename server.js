@@ -49,6 +49,18 @@ app.get('/greetings', function (req, res) {
   res.render('greetings');
 });
 
+app.get('/travel', function (req, res) {
+  res.render('travel');
+});
+
+app.get('/hospital', function (req, res) {
+  res.render('hospital');
+});
+
+app.get('/shopping', function (req, res) {
+  res.render('shopping');
+});
+
 app.post('/school', function (req, res) {
   //console.log(req.body.sentence);
   //console.log(req.body.voice);
@@ -107,18 +119,65 @@ app.post('/greetings', function (req, res) {
   }
 });
 
-
-app.get('/travel', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/travel.html'));
+app.post('/travel', function (req, res) {
+  //console.log(req.body.sentence);
+  //console.log(req.body.voice);
+  if (req.body.voice == '') {
+    res.send('error');
+  } else {
+    const result = spawn('python', [
+      'jamo_ver.py',
+      req.body.sentence,
+      req.body.voice, // req.body.voice
+    ]);
+    result.stdout.on('data', (data) => {
+      console.log(JSON.parse(data));
+      //res.render('school', JSON.parse(data));
+      res.json(JSON.parse(data));
+    });
+  }
 });
 
-app.get('/hospital', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/hospital.html'));
+app.post('/hospital', function (req, res) {
+  //console.log(req.body.sentence);
+  //console.log(req.body.voice);
+  if (req.body.voice == '') {
+    res.send('error');
+  } else {
+    const result = spawn('python', [
+      'jamo_ver.py',
+      req.body.sentence,
+      req.body.voice, // req.body.voice
+    ]);
+    result.stdout.on('data', (data) => {
+      console.log(JSON.parse(data));
+      //res.render('school', JSON.parse(data));
+      res.json(JSON.parse(data));
+    });
+  }
 });
 
-app.get('/shopping', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/shopping.html'));
+app.post('/shopping', function (req, res) {
+  //console.log(req.body.sentence);
+  //console.log(req.body.voice);
+  if (req.body.voice == '') {
+    res.send('error');
+  } else {
+    const result = spawn('python', [
+      'jamo_ver.py',
+      req.body.sentence,
+      req.body.voice, // req.body.voice
+    ]);
+    result.stdout.on('data', (data) => {
+      console.log(JSON.parse(data));
+      //res.render('school', JSON.parse(data));
+      res.json(JSON.parse(data));
+    });
+  }
 });
+
+
+
 // ---------------------------------------------------
 app.get('/practice', function (req, res) {
   res.sendFile(path.join(__dirname, './views/practice.html'));
