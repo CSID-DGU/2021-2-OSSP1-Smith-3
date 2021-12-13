@@ -73,7 +73,7 @@ app.post('/school', function (req, res) {
       req.body.voice, // req.body.voice
     ]);
     result.stdout.on('data', (data) => {
-      console.log(JSON.parse(data));
+      console.log(JSON.stringify(JSON.parse(data)));
       //res.render('school', JSON.parse(data));
       res.json(JSON.parse(data));
     });

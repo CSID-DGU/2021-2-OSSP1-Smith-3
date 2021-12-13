@@ -156,11 +156,14 @@ def set_compare_pair():
                     voice_table[v_idx][key].append(key)
                     break
 
+    
     for s_idx, s_dict in enumerate(script_table.values()):
         for key in s_dict:
             if s_dict[key] != 1:
                 not_found_script.append([key, s_idx])
-
+    
+            
+    
     for v_idx, v_dict in enumerate(voice_table.values()):
         for key in v_dict:
             if len(v_dict[key]) == 0:
@@ -171,17 +174,29 @@ def set_compare_pair():
     # print(not_found_script)
     # print(not_found_voice)
     # print()
-
-    for s in not_found_script:
-        s_idx = s[1]
+    """
+    for s_idx, s_dict in enumerate(script_table.values()):
+        key = list(s_dict)[0]
         for v in not_found_voice:
-            v_idx = v[1]
-            if is_similar(s[0], v[0]) and not abs(s_idx-v_idx) > len(script_table)//3 and script_table[s_idx].get(s[0]) != 1:
-                script_table[s_idx][s[0]] = 1
+            v_idx=v[1]
+            if (v[0] in s_dict or is_similar(key, v[0])) and not abs(v_idx - s_idx) > len(script_table)//3: # 너무 멀리 떨어져 있으면 다른 단어로 취급
+                    script_table[s_idx][key] = 1
+                    voice_table[v_idx][v[0]].append(key)
+                    break
+    """
+    
+
+    for v in not_found_voice:
+        v_idx=v[1]
+        for s in not_found_script:
+            s_idx = s[1]
+            if (v[0] in s[0] or is_similar(s[0], v[0])) and not abs(s_idx-v_idx) > len(script_table)//3:
+                script_table[s_idx][s[0]]=1
                 voice_table[v_idx][v[0]].append(s[0])
                 break
+    
 
-    # 비교짝 못 찾은 단어
+    # 비교짝 못 찾은 단어 
     for v in not_found_voice:
         if len(voice_table[v[1]].get(v[0])) == 0:
             voice_table[v[1]].get(v[0]).append("UNKNOWN")
@@ -213,26 +228,23 @@ def compare_start(word, target, skip):
     correct = True
     split_word = split_syllable(h2j(word))
     split_target = split_syllable(h2j(target[skip:]))
-    start_idx = 0
-
-    if len(split_word) != len(split_target):
+    start_idx_t = 0 
+    start_idx_w = 0 
+    
+    if len(split_word)!= len(split_target):
         # 음절 포함된다면 인덱스 반환
         if join_jamos(word)[0] in join_jamos(target):
-            start_idx = join_jamos(target).index(join_jamos(word)[0])
-
+            start_idx_t = join_jamos(target).index(join_jamos(word)[0])
+        elif join_jamos(target)[0] in join_jamos(word): 
+            start_idx_w = join_jamos(word).index(join_jamos(target)[0])
         else:
             # 똑같은 초성 나오는 지점에서 시작
             for w in split_word:
                 if split_target[0][0] == w[0]:
                     start_idx = split_word.index(w)
-                    break
-
-        false_syllable = compare_syllable(
-            split_target[start_idx:], split_word, start_idx)
-    else:
-        # 음절이 똑같이 쪼개짐
-        false_syllable = compare_syllable(
-            split_target[start_idx:], split_word, start_idx)
+                    break;
+        
+    false_syllable = compare_syllable(split_target,split_word,start_idx_t, start_idx_w)
 
     # if(len(split_target)>len(split_word)):
     #     for t in split_target[len(split_word):]:
@@ -254,12 +266,16 @@ def compare_start(word, target, skip):
     return correct, false_syllable
 
 
-def compare_syllable(split_target, split_word, start_idx):
+def compare_syllable(split_target,split_word, start_idx_t, start_idx_w):
     false_syllable = {}
     liasion_flag = False
     palataliztion_flag = False
 
-    for t, w in zip(split_target, split_word):
+    split_target = split_target[start_idx_t:]
+    split_word = split_word[start_idx_w:]
+    #print(str(split_target)+"과 "+str(split_word)+"를 비교")
+
+    for t,w in zip(split_target, split_word):
         key = join_jamos(t)
         false_syllable[key] = []
 
