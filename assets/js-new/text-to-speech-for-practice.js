@@ -47,6 +47,6 @@ btn_tts.addEventListener('click', function() {
     window.speechSynthesis.speak(utterThis);
   }
 
-  speech(kor.textContent)
+  speech(kor.value);
 
 })
