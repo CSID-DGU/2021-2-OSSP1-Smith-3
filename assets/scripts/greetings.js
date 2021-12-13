@@ -2,8 +2,11 @@ const kor = document.querySelector('.kor-sentence');
 const situation = document.querySelector('.situation');
 const eng = document.querySelector('.eng-description');
 const url = 'http://localhost:8080/greeting.json';
+var sentence = document.getElementById('sentence');
 var nextbt = document.getElementById('next-bt');
 var prevbt = document.getElementById('prev-bt');
+var result = document.getElementById('speech_to_text');
+var correct = document.getElementById('correct');
 
 let idx = 0;
 fetch(url)
@@ -12,6 +15,8 @@ fetch(url)
     kor.innerHTML = data[idx].한국어;
     situation.innerHTML = data[idx].소분류;
     eng.innerHTML = data[idx].영어;
+    sentence.value = data[idx].한국어;
+
     prevbt.disabled = 'disabled';
     nextbt.addEventListener('click', function () {
       showNext(data);
@@ -28,6 +33,10 @@ function showNext(data) {
     kor.innerHTML = data[idx].한국어;
     situation.innerHTML = data[idx].소분류;
     eng.innerHTML = data[idx].영어;
+    sentence.value = data[idx].한국어;
+    result.innerHTML = '';
+    correct.innerHTML = '';
+    voice.value = '';
   }
   if (idx === 9) {
     nextbt.disabled = 'disabled';
@@ -41,6 +50,10 @@ function showPrev(data) {
     kor.innerHTML = data[idx].한국어;
     situation.innerHTML = data[idx].소분류;
     eng.innerHTML = data[idx].영어;
+    sentence.value = data[idx].한국어;
+    result.innerHTML = '';
+    correct.innerHTML = '';
+    voice.value = '';
   }
 
   if (idx === 0) {

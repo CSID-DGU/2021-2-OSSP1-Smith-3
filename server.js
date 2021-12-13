@@ -41,6 +41,14 @@ app.get('/school', function (req, res) {
   res.render('school');
 });
 
+app.get('/restaurant', function (req, res) {
+  res.render('restaurant');
+});
+
+app.get('/greetings', function (req, res) {
+  res.render('greetings');
+});
+
 app.post('/school', function (req, res) {
   //console.log(req.body.sentence);
   //console.log(req.body.voice);
@@ -60,12 +68,45 @@ app.post('/school', function (req, res) {
   }
 });
 
-app.get('/restaurant', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/restaurant.html'));
+app.post('/restaurant', function (req, res) {
+  //console.log(req.body.sentence);
+  //console.log(req.body.voice);
+  if (req.body.voice == '') {
+    res.send('error');
+  } else {
+    const result = spawn('python', [
+      'jamo_ver.py',
+      req.body.sentence,
+      req.body.voice, // req.body.voice
+    ]);
+    result.stdout.on('data', (data) => {
+      console.log(JSON.parse(data));
+      //res.render('school', JSON.parse(data));
+      res.json(JSON.parse(data));
+    });
+  }
 });
-app.get('/greetings', function (req, res) {
-  res.sendFile(path.join(__dirname, './views/greetings.html'));
+
+
+app.post('/greetings', function (req, res) {
+  //console.log(req.body.sentence);
+  //console.log(req.body.voice);
+  if (req.body.voice == '') {
+    res.send('error');
+  } else {
+    const result = spawn('python', [
+      'jamo_ver.py',
+      req.body.sentence,
+      req.body.voice, // req.body.voice
+    ]);
+    result.stdout.on('data', (data) => {
+      console.log(JSON.parse(data));
+      //res.render('school', JSON.parse(data));
+      res.json(JSON.parse(data));
+    });
+  }
 });
+
 
 app.get('/travel', function (req, res) {
   res.sendFile(path.join(__dirname, './views/travel.html'));
