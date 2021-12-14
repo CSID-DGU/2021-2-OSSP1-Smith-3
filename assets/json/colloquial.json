@@ -4,7 +4,7 @@
     "단어": "노잼 (nojaem)",
     "설명": "Something that is not fun, funny, or uninteresting",
     "긴설명": "노 (no) means “no” or “not”\r\n잼 (jaem) is the first part of 재미있어요 (jaemiisseoyo), meaning interesting.\r\nSo if you see something that you don’t think is fun or funny, you can say “노잼 (nojaem)!”",
-    "예문": "오징어게임 노잼이었어",
+    "예문": "오징어 게임 노잼이야",
     "예문번역": "The squid game was not fun."
   },
   {
@@ -20,8 +20,8 @@
     "단어": "꿀팁 (kkultip)",
     "설명": "A great tip",
     "긴설명": "Just like in the phrase 꿀잼 (kkuljaem), this phrase uses the word ‘honey’ (꿀 | kkul) to mean “really good.” This time it’s a 팁 (tip | tip) that’s being considered and this is not just any old tip!\r\n\r\nIn English, we may say “gold” or “golden” to denote something very valuable but in Korean, it’s “honey.” Use this when you give a great tip to someone or someone gives you advice or tips that are valuable!",
-    "예문": "A: 동국대 학생은 대한극장에서 싸게 영화를 볼 수 있어\r\nB: 꿀팁 감사합니다",
-    "예문번역": "A: Dongguk University students can watch movies cheaply at the Daehan Theater.\r\nB: Thank you for the great tip."
+    "예문": "면접 볼 때 꿀팁 좀 알려주세요.",
+    "예문번역": "Please, let me know the great tip for interview."
   },
   {
     "분류": "1",
@@ -100,7 +100,7 @@
     "단어": "복세편살 (bok-se-pyeon-sahl)",
     "설명": "“let’s live a comfortable life in a complex world”",
     "긴설명": "An abbreviation for “복잡한 세상 편하게 살자”. Very useful with all the negative news recently.",
-    "예문": "이렇게 시험 망했을 때일수록 복세편살하자",
+    "예문": "이렇게 시험 망했을때 일수록 복세편살하자",
     "예문번역": "Let's take it easy in this stressful life when we failed the exam like this"
   },
   {
@@ -132,8 +132,8 @@
     "단어": "띵곡 (tting-gok)",
     "설명": "excellent piece of music",
     "긴설명": "Koreans simply changed 명 to 띵 due to its similar shape. Other variations include: 댕댕이 (from 멍멍이 meaning doggo), 댕청 (from 멍청 meaning dumb in a cute way).",
-    "예문": "A: 이번 아이유 신곡 들어봤어?\r\nB: 당연하지 완전 띵곡이더라",
-    "예문번역": "A: Have you listened to IU's new song?\r\nB: Of course. It's a masterpiece."
+    "예문": "이번 아이유 신곡 들어봤어? 완전 띵곡이더라.",
+    "예문번역": "Have you listened to IU's new song? It's a masterpiece."
   },
   {
     "분류": "2",
@@ -154,7 +154,7 @@
   {
     "분류": "2",
     "단어": "멍청비용 (meong-cheong-bee-yong)",
-    "설명": "Money that someone wastes out of stupidity. ",
+    "설명": "Money that /someone wastes out of stupidity. ",
     "긴설명": "Can be used for lotto tickets or late fees.",
     "예문": "어제 늦게 일어나서 택시 타고 학교 갔어. 완전 멍청비용",
     "예문번역": "I woke up late yesterday and went to school by taxi. A total idiot."
