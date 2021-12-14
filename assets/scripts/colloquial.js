@@ -28,14 +28,14 @@ fetch(url)
 
 function showNext(data) {
   prevbt.disabled = false;
-  if (idx < 20) {
+  if (idx < 17) {
     idx++;
     editHtml(data);
     result.innerHTML = '';
     correct.innerHTML = '';
     voice.value = '';
   }
-  if (idx === 19) {
+  if (idx === 16) {
     nextbt.disabled = 'disabled';
   }
 }
