@@ -143,14 +143,17 @@
                     $.each(res.script_new, (idx, word) => {
                         if (res.script_table[idx][word] == 0) {
                             $('#error').append(`"${word}"를 발음하지 않으셨군요! <br>`)
-                        }
-                        else {
-                            if (res.false_table[idx][word] != "correct") {
-                                var part = res.false_table[idx][word];
-                                $('#error').append(`"${word}"에서 "${part}"발음을 고쳐 보는게 어떨까요? <br>`)
-                            }
-                        }
+                    }})
 
+                    $.each(res.false_new, (idx, result)=>{
+                        var message =  `"${result}"에서 `;
+                        $.each(res.false_table[idx][result], (key, val)=>{
+                            if(val!=""){
+                                message += `"${key}"의 `;
+                                message += `[${val}] `;
+                            }
+                        })
+                        $('#error').append(`${message} 발음을 고쳐 보는게 어떨까요? <br>`)
                     })
 
                 }
