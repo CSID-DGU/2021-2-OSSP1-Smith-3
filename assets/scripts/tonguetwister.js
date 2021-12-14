@@ -1,13 +1,17 @@
 const kor = document.querySelector('.kor-sentence');
 const url = 'http://localhost:8080/tonguetwister.json';
+var sentence = document.getElementById('sentence');
 var nextbt = document.getElementById('next-bt');
 var prevbt = document.getElementById('prev-bt');
+var result = document.getElementById('speech_to_text');
+var correct = document.getElementById('correct');
 
 let idx = 0;
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
     kor.innerHTML = data[idx].문장;
+    sentence.value = data[idx].문장;
 
     prevbt.disabled = 'disabled';
     nextbt.addEventListener('click', function () {
@@ -20,11 +24,15 @@ fetch(url)
 
 function showNext(data) {
   prevbt.disabled = false;
-  if (idx < 10) {
+  if (idx < 11) {
     idx++;
     kor.innerHTML = data[idx].문장;
+    sentence.value = data[idx].문장;
+    result.innerHTML = '';
+    correct.innerHTML = '';
+    voice.value = '';
   }
-  if (idx === 9) {
+  if (idx === 10) {
     nextbt.disabled = 'disabled';
   }
 }
@@ -34,6 +42,10 @@ function showPrev(data) {
   if (idx > 0) {
     idx--;
     kor.innerHTML = data[idx].문장;
+    sentence.value = data[idx].문장;
+    result.innerHTML = '';
+    correct.innerHTML = '';
+    voice.value = '';
   }
 
   if (idx === 0) {
