@@ -8,7 +8,7 @@
   {
     "소분류": "팀프로젝트",
     "발화자": "B",
-    "한국어": "아니, 우리 1명이 부족해. 혹시 우리 팀에 들어올래?",
+    "한국어": "아니, 우리 한 명이 부족해. 혹시 우리 팀에 들어올래?",
     "영어": "No, we're short of one person. Do you want to join us?"
   },
   {
@@ -32,7 +32,7 @@
   {
     "소분류": "팀프로젝트",
     "발화자": "B",
-    "한국어": "내가 내일 모레는 오전 밖에 시간이 안 되는데 괜찮을까?",
+    "한국어": "제가 내일 모레는 오전 밖에 시간이 안 되는데 괜찮을까요?",
     "영어": "I'll only be available in the morning that day. Is that okay?"
   },
   {
@@ -50,13 +50,13 @@
   {
     "소분류": "팀프로젝트",
     "발화자": "A",
-    "한국어": "그렇지? 이메일도 있고 메신저도 있으니까 시간만 맞춰서 온라인으로 회의하자.",
+    "한국어": "그렇지? 이메일도 있고 메신저도 있으니까 시간 맞춰서 온라인으로 회의하자.",
     "영어": "That is right. We have e-mails and messengers. Let's just find a good time for everyone and have our meeting online."
   },
   {
     "소분류": "팀프로젝트",
     "발화자": "B",
-    "한국어": "응. 그럼 다들 이메일 주소들 좀 줄래?",
+    "한국어": "응. 그럼 다들 이메일 주소 좀 줄래?",
     "영어": "Sure, can y'all give me your e-mail addresses?"
   }
 ]

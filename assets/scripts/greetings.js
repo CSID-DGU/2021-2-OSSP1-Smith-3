@@ -28,7 +28,7 @@ fetch(url)
 
 function showNext(data) {
   prevbt.disabled = false;
-  if (idx < 10) {
+  if (idx < 13) {
     idx++;
     kor.innerHTML = data[idx].한국어;
     situation.innerHTML = data[idx].소분류;
@@ -38,7 +38,7 @@ function showNext(data) {
     correct.innerHTML = '';
     voice.value = '';
   }
-  if (idx === 9) {
+  if (idx === 12) {
     nextbt.disabled = 'disabled';
   }
 }
