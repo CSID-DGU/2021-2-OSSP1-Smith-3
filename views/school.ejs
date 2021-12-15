@@ -22,7 +22,8 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="images/favicon.png" />
     <!-- For Font Awesome icons-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 
 <body>
@@ -31,78 +32,82 @@
         <!-- partial:partials/_sidebar.html -->
         <%- include ('partials/_sidebar.html') %>
 
-        <!-- partial:partials/_navbar.html -->
-        <%- include ('partials/_navbar.html') %>
-        <!-- partial -->
-        <div class="main-panel">
-            <div class="content-wrapper pb-0">
-                <div class="page-header flex-wrap">
-                    <div class="header-left">
-                        <h4> 학습예문 - 학교 </h4>
-                    </div>
-                </div>
-                <div class="situation" style="margin: 10px 0px;">
-                    <h5>situation</h5>
-                </div>
-                <!-- first row starts here -->
-                <!-- image card row starts here -->
-                <div class="row">
-                    <div class="col-md-6 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-
-
-                                <button class="btn_tts"><i class="fas fa-headphones"></i></button>
-        
-
-                                <p class="card-description kor-sentence"
-                                    style="text-align: center; font-size: 18px; color: black; font-weight: bold;">
-                                </p>
-                                <p class="card-description eng-description"
-                                    style="text-align: center; font-size: 14px;"></p>
+            <!-- partial:partials/_navbar.html -->
+            <%- include ('partials/_navbar.html') %>
+                <!-- partial -->
+                <div class="main-panel">
+                    <div class="content-wrapper pb-0">
+                        <div class="page-header flex-wrap">
+                            <div class="header-left">
+                                <h4> 학습예문 - 학교 </h4>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between flex-wrap">
-                                    <div>
-                                        <div class="card-title mb-0">발음 연습하기</div>
-                                        <p class="card-description">발음 정확도를 확인</p>
-                                    </div>
-                                    <div>
-                                        <div class="d-flex mr-3 mt-2 mt-sm-0">
-                                            <button type="submit" class="btn btn-info" id="btn_mic_toggle">연습시작</button>
-                                        </div>
+                        <div class="situation" style="margin: 10px 0px;">
+                            <h5>situation</h5>
+                        </div>
+                        <!-- first row starts here -->
+                        <!-- image card row starts here -->
+                        <div class="row">
+                            <div class="col-md-6 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+
+
+                                        <button class="btn_tts"><i class="fas fa-headphones"></i></button>
+
+
+                                        <p class="card-description kor-sentence"
+                                            style="text-align: center; font-size: 18px; color: black; font-weight: bold;">
+                                        </p>
+                                        <p class="card-description eng-description"
+                                            style="text-align: center; font-size: 14px;"></p>
                                     </div>
                                 </div>
-                                <a id="speech_to_text"></a>
-                                
-                                
-                                <form method="POST" action="/school">
-                                    <input id="sentence" type="hidden" name="sentence">
-                                    <input id="voice" type="hidden" name="voice">
-                                    <button type="button" class="btn btn-success btn-rounded btn-fw calc"> 정확도확인 </button>
-                                </form>
-                                <h1 class="display-5" id="correct"></h1>
+                            </div>
+                            <div class="col-md-6 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between flex-wrap">
+                                            <div>
+                                                <div class="card-title mb-0">발음 연습하기</div>
+                                                <p class="card-description">발음 정확도를 확인</p>
+                                            </div>
+                                            <div>
+                                                <div class="d-flex mr-3 mt-2 mt-sm-0">
+                                                    <button type="submit" class="btn btn-info"
+                                                        id="btn_mic_toggle">연습시작</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a id="speech_to_text"></a>                                
 
+                                        <form method="POST" action="/school">
+                                            <input id="sentence" type="hidden" name="sentence">
+                                            <input id="voice" type="hidden" name="voice">
+                                            <button type="button" class="btn btn-success btn-rounded btn-fw calc"> 정확도확인
+                                            </button>
+                                        </form>
+
+                                        <br>
+                                        <h1 class="display-5" id="correct"></h1>
+
+                                        <ul id="error"></ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Prev, Nect Button -->
+                        <%- include ('partials/_btn.html') %>
+
                     </div>
+                    <!-- content-wrapper ends -->
+
+                    <!-- partial:partials/_footer.html -->
+                    <%- include ('partials/_footer.html') %>
+                        <!-- partial -->
                 </div>
-
-                <!-- Prev, Nect Button -->
-                <%- include ('partials/_btn.html') %>
-                
-            </div>
-            <!-- content-wrapper ends -->
-
-            <!-- partial:partials/_footer.html -->
-            <%- include ('partials/_footer.html') %>
-            <!-- partial -->
-        </div>
-        <!-- main-panel ends -->
+                <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
     </div>
@@ -112,32 +117,49 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script>
-        $('.calc').click(()=>{
+        $('.calc').click(() => {
             //e.preventDefault();
             $.ajax({
                 method: 'POST',
                 url: '/school',
-                data : {
-                    "sentence" :$('#sentence').val(),
+                data: {
+                    "sentence": $('#sentence').val(),
                     "voice": $('#voice').val(),
                 },
-            }).done((res)=>{
+            }).done((res) => {
                 $('#speech_to_text').html("");
-                if(res=="error"){
+                if (res == "error") {
                     $('#speech_to_text').append(`<span style="color:red"> 아무것도 말하지 않았어요 ㅜ.ㅜ </span>`)
                 }
-                else{
+                else {
                     $('#correct').html(res.percent + "%");
-                    $.each(res.voice_new, (idx, word)=>{
-                    if (res.false_new[idx]!== undefined){
-                        $('#speech_to_text').append(`<span style="color:red">${word} </span>`)
-                    }
-                    else{
-                        $('#speech_to_text').append(`<span style="color:green">${word} </span>`)
-                    }
-                })
+                    $.each(res.voice_new, (idx, word) => {
+                        if (res.false_new[idx] !== undefined) {
+                            $('#speech_to_text').append(`<span style="color:red">${word} </span>`)
+                        }
+                        else {
+                            $('#speech_to_text').append(`<span style="color:green">${word} </span>`)
+                        }
+                    })
+
+                    $.each(res.script_new, (idx, word) => {
+                        if (res.script_table[idx][word] == 0) {
+                            $('#error').append(`<li>"${word}"를 발음하지 않으셨군요! </li>`)
+                    }})
+
+                    $.each(res.false_new, (idx, result)=>{
+                        var message =  `"${result}"에서 `;
+                        $.each(res.false_table[idx][result], (key, val)=>{
+                            if(val!=""){
+                                message += `"${key}"의 `;
+                                message += `[${val}] `;
+                            }
+                        })
+                        $('#error').append(`<li>${message} 발음을 고쳐 보는게 어떨까요? </li>`)
+                    })
+
                 }
-            }).fail((xhr,code,err)=>{
+            }).fail((xhr, code, err) => {
                 console.log(err);
             })
 

@@ -20,6 +20,9 @@ recognition.maxAlternatives = 10000;
 const speech_to_text = document.getElementById("speech_to_text");
 const voice = document.getElementById("voice");
 
+var error = document.getElementById('error');
+var correct = document.getElementById('correct');
+
 let speechToText = "";
 
 recognition.addEventListener("result", (e) => {
@@ -45,6 +48,8 @@ btn_mic_toggle.addEventListener("click", () => {
         is_mic_on = false;
         recognition.abort();
         voice.value = speech_to_text.innerHTML;
+        error.innerHTML = ""
+        correct.innerHTML = ""
     }
     // 꺼져 있으면
     else {
