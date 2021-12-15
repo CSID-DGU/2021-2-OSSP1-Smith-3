@@ -2,13 +2,13 @@
   {
     "소분류": "음식 메뉴 정하기",
     "발화자": "A",
-    "한국어": "가위, 바위, 보 해서이긴 사람이 먹고 싶은 메뉴 고르자.",
+    "한국어": "가위바위보 해서이긴 사람이 먹고 싶은 메뉴 고르자.",
     "영어": "Do rock, paper, scissors and let the winner choose the menu."
   },
   {
     "소분류": "음식 메뉴 정하기",
     "발화자": "B",
-    "한국어": "그래. 시작한다? 안 내면 진다 가위, 바위, 보!",
+    "한국어": "그래. 시작한다? 안 내면 진다 가위바위보!",
     "영어": "OK, let's do it. If you don't participate, you lost. Rock, paper, scissors!"
   },
   {
@@ -20,7 +20,7 @@
   {
     "소분류": "음식 메뉴 정하기",
     "발화자": "B",
-    "한국어": "김치찌개보단 순두부찌개가 더 맛있을 것 같은데 알았어.",
+    "한국어": "김치찌개 보단 순두부찌개가 더 맛있을 것 같은데 알았어.",
     "영어": "Soft Tofu stew seems to look better than Kimchi stew but all right."
   },
   {
@@ -38,7 +38,7 @@
   {
     "소분류": "식당 예약",
     "발화자": "A",
-    "한국어": "예약할게요. 최종결제할 때 예약금만큼 음식값에서 제외되는 거 맞죠?",
+    "한국어": "예약할게요. 최종 결제할 때 예약금만큼 음식 값에서 제외되는 거 맞죠?",
     "영어": "OK, I will. The deposit will be excluded from the final payment, right?"
   },
   {
@@ -56,7 +56,7 @@
   {
     "소분류": "웨이팅",
     "발화자": "B",
-    "한국어": "저번 주에 방송에 나왔다더니 다들 보고 왔나 봐.",
+    "한국어": "저번 주에 방송에 나왔었는데 다들 보고 왔나 봐.",
     "영어": "This place was on TV last week. I think people have seen it."
   }
 ]
