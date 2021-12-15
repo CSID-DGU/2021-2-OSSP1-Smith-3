@@ -5,6 +5,7 @@ var nextbt = document.getElementById('next-bt');
 var prevbt = document.getElementById('prev-bt');
 var result = document.getElementById('speech_to_text');
 var correct = document.getElementById('correct');
+var meme = document.getElementById('meme');
 
 let idx = 0;
 fetch(url)
@@ -31,6 +32,7 @@ function showNext(data) {
     result.innerHTML = '';
     correct.innerHTML = '';
     voice.value = '';
+    meme.src = '';
   }
   if (idx === 9) {
     nextbt.disabled = 'disabled';
@@ -46,6 +48,7 @@ function showPrev(data) {
     result.innerHTML = '';
     correct.innerHTML = '';
     voice.value = '';
+    meme.src = '';
   }
 
   if (idx === 0) {
