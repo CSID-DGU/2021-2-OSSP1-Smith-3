@@ -10,6 +10,7 @@ var short = document.getElementById('short-description');
 var long = document.getElementById('long-description');
 var result = document.getElementById('speech_to_text');
 var correct = document.getElementById('correct');
+var error = document.getElementById('error');
 
 let idx = 0;
 fetch(url)
@@ -31,9 +32,6 @@ function showNext(data) {
   if (idx < 16) {
     idx++;
     editHtml(data);
-    result.innerHTML = '';
-    correct.innerHTML = '';
-    voice.value = '';
   }
   if (idx === 15) {
     nextbt.disabled = 'disabled';
@@ -60,4 +58,8 @@ function editHtml(data) {
   short.innerHTML = data[idx].설명;
   long.innerHTML = data[idx].긴설명;
   sentence.value = data[idx].예문;
+  result.innerHTML = '';
+  correct.innerHTML = '';
+  voice.value = '';
+  error.innerHTML = '';
 }

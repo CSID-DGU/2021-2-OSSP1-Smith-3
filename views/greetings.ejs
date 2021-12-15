@@ -79,14 +79,16 @@
                                 </div>
                                 <a id="speech_to_text"></a>
                                 
-                                
                                 <form method="POST" action="/greetings">
                                     <input id="sentence" type="hidden" name="sentence">
                                     <input id="voice" type="hidden" name="voice">
                                     <button type="button" class="btn btn-success btn-rounded btn-fw calc"> 정확도확인 </button>
                                 </form>
-                                <h1 class="display-5" id="correct"></h1>
 
+                                <br>
+                                <h1 class="display-5" id="correct"></h1>
+                                
+                                <ul id="error"></ul>
                             </div>
                         </div>
                     </div>
@@ -129,13 +131,30 @@
                 else{
                     $('#correct').html(res.percent + "%");
                     $.each(res.voice_new, (idx, word)=>{
-                    if (res.false_new[idx]!== undefined){
-                        $('#speech_to_text').append(`<span style="color:red">${word} </span>`)
-                    }
-                    else{
-                        $('#speech_to_text').append(`<span style="color:green">${word} </span>`)
-                    }
-                })
+                        if (res.false_new[idx]!== undefined){
+                            $('#speech_to_text').append(`<span style="color:red">${word} </span>`)
+                        }
+                        else{
+                            $('#speech_to_text').append(`<span style="color:green">${word} </span>`)
+                        }
+                    })
+
+                    $.each(res.script_new, (idx, word) => {
+                        if (res.script_table[idx][word] == 0) {
+                            $('#error').append(`<li>"${word}"를 발음하지 않으셨군요! </li>`)
+                    }})
+
+                    $.each(res.false_new, (idx, result)=>{
+                        var message =  `"${result}"에서 `;
+                        $.each(res.false_table[idx][result], (key, val)=>{
+                            if(val!=""){
+                                message += `"${key}"의 `;
+                                message += `[${val}] `;
+                            }
+                        })
+                        $('#error').append(`<li>${message} 발음을 고쳐 보는게 어떨까요? </li>`)
+                    })
+                    
                 }
             }).fail((xhr,code,err)=>{
                 console.log(err);

@@ -7,6 +7,7 @@ var nextbt = document.getElementById('next-bt');
 var prevbt = document.getElementById('prev-bt');
 var result = document.getElementById('speech_to_text');
 var correct = document.getElementById('correct');
+var error = document.getElementById('error');
 
 let idx = 0;
 fetch(url)
@@ -37,6 +38,7 @@ function showNext(data) {
     result.innerHTML = '';
     correct.innerHTML = '';
     voice.value = '';
+    error.innerHTML = '';
   }
   if (idx === 13) {
     nextbt.disabled = 'disabled';
@@ -54,6 +56,7 @@ function showPrev(data) {
     result.innerHTML = '';
     correct.innerHTML = '';
     voice.value = '';
+    error.innerHTML = '';
   }
 
   if (idx === 0) {
