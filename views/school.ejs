@@ -79,8 +79,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <a id="speech_to_text"></a>
-
+                                        <a id="speech_to_text"></a>                                
 
                                         <form method="POST" action="/school">
                                             <input id="sentence" type="hidden" name="sentence">
@@ -88,8 +87,11 @@
                                             <button type="button" class="btn btn-success btn-rounded btn-fw calc"> 정확도확인
                                             </button>
                                         </form>
+
+                                        <br>
                                         <h1 class="display-5" id="correct"></h1>
-                                        <a id="error"></a>
+
+                                        <ul id="error"></ul>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +144,7 @@
 
                     $.each(res.script_new, (idx, word) => {
                         if (res.script_table[idx][word] == 0) {
-                            $('#error').append(`"${word}"를 발음하지 않으셨군요! <br>`)
+                            $('#error').append(`<li>"${word}"를 발음하지 않으셨군요! </li>`)
                     }})
 
                     $.each(res.false_new, (idx, result)=>{
@@ -153,7 +155,7 @@
                                 message += `[${val}] `;
                             }
                         })
-                        $('#error').append(`${message} 발음을 고쳐 보는게 어떨까요? <br>`)
+                        $('#error').append(`<li>${message} 발음을 고쳐 보는게 어떨까요? </li>`)
                     })
 
                 }
