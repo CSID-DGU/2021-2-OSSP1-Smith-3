@@ -8,14 +8,14 @@
   {
     "소분류": "증상을 묻고 답하는 상황",
     "발화자": "A-1",
-    "한국어": "요즘 며칠간 약간 오한이 있고 미열이 있었어요.",
+    "한국어": "요즘 며칠 간 약간 오한이 있고 미열이 있었어요.",
     "영어": "I've had a little chill and a slight fever for the last few days."
   },
   {
     "소분류": "증상을 묻고 답하는 상황",
     "발화자": "A-1",
-    "한국어": "자고 일어났더니 오른쪽 팔이 올라가지 않아요. 어제부터요.",
-    "영어": "I haven't been able to lift my arm after I woke up. From yesterday."
+    "한국어": "자고 일어났더니 어제부터 오른쪽 팔이 올라가지 않아요.",
+    "영어": "I haven't been able to lift my arm after I woke up from yesterday."
   },
   {
     "소분류": "증상을 묻고 답하는 상황",
@@ -26,7 +26,7 @@
   {
     "소분류": "증상을 묻고 답하는 상황",
     "발화자": "A-1",
-    "한국어": "목이 아픈 건 많이 나아졌는데 기침은 멈추지 않고 계속 나요. 일상생활이 힘들 정도로요.",
+    "한국어": "목이 아픈 건 많이 나아졌는데 기침이 멈추지 않아요. 일상생활이 힘들 정도로요.",
     "영어": "My throat is better but I still get coughs. I'm having difficulty doing my usual chores."
   },
   {
@@ -50,7 +50,7 @@
   {
     "소분류": "약을 사는 상황",
     "발화자": "A-1",
-    "한국어": "두통이 너무 심한데요. 효과 좋은 두통약 주세요.",
+    "한국어": "두통이 너무 심한데요. 효과좋은 두통약 주세요.",
     "영어": "I have a bad headache. Please give me a good pill."
   },
   {

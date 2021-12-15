@@ -25,7 +25,7 @@ fetch(url)
 
 function showNext(data) {
   prevbt.disabled = false;
-  if (idx < 10) {
+  if (idx < 6) {
     idx++;
     kor.innerHTML = data[idx].문장;
     sentence.value = data[idx].문장;
@@ -34,7 +34,7 @@ function showNext(data) {
     voice.value = '';
     meme.src = '';
   }
-  if (idx === 9) {
+  if (idx === 5) {
     nextbt.disabled = 'disabled';
   }
 }

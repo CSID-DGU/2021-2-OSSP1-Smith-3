@@ -20,7 +20,7 @@
     "단어": "꿀팁 (kkultip)",
     "설명": "A great tip",
     "긴설명": "Just like in the phrase 꿀잼 (kkuljaem), this phrase uses the word ‘honey’ (꿀 | kkul) to mean “really good.” This time it’s a 팁 (tip | tip) that’s being considered and this is not just any old tip!\r\n\r\nIn English, we may say “gold” or “golden” to denote something very valuable but in Korean, it’s “honey.” Use this when you give a great tip to someone or someone gives you advice or tips that are valuable!",
-    "예문": "면접 볼 때 꿀팁 좀 알려주세요.",
+    "예문": "면접 볼 때 꿀팁 좀 알려 주세요.",
     "예문번역": "Please, let me know the great tip for interview."
   },
   {
@@ -68,7 +68,7 @@
     "단어": "알바 (alba)",
     "설명": "A part-time job",
     "긴설명": "This is a shortened phrase and comes from 아르바이트 (areubaiteu), which means “part-time job” in Korean. The word originally comes from the German word “arbeit”, meaning “work or labor.” \r\n\r\nBonus round: You can add 생 at the end of 알바 (alba) to make 알바생 (albasaeng). This refers to someone who is studying at school and also working part time. The 생 (saeng) comes from the word 학생 (haksaeng), which means “student”. \r\n\r\nYou often see 알바생 (albasaeng) at 편의점 (pyeonuijeom | convenience stores), 피씨방 (pissibang | Internet cafe), and 카페 (kape | cafe) etc. Look out for those 알바생 (albasaeng) the next time you’re nearby a 대학교 (daehakgyo | university)!",
-    "예문": "여름방학 때 일할 알바 자리를 구했어",
+    "예문": "여름방학 때 일할 알바자리를 구했어",
     "예문번역": "I have taken a part time job for the summer vacation"
   },
   {
@@ -76,7 +76,7 @@
     "단어": "대유잼 (dae-yu-jam)",
     "설명": "great fun",
     "긴설명": "A mixture of Hanja and Korean. You can describe a person or TV show as 대유잼.",
-    "예문": "새로 나온 예능 쇼 대유잼이야",
+    "예문": "새로 나온 예능 쇼 대유잼",
     "예문번역": "the new variety show is great fun"
   },
   {
@@ -84,7 +84,7 @@
     "단어": "라떼는 말이야(Ra-tte-neun-mal-ee-ya)",
     "설명": "“in my day”",
     "긴설명": "나 때는 말이야 (Na-tte-neun-mal-ee-ya). Na-tte sounds similar to latte, and mal is horse in Korean. It’s a sarcastic expression for 꼰대 (Kkondae, a condescending person who is usually older, like “boomer”) who always says “in my day”.",
-    "예문": "라떼는 말이야 다 알아서 했어",
+    "예문": "라떼는말이야 다 알아서 했어",
     "예문번역": "we did it all by ourselves back in my day"
   },
   {
@@ -92,7 +92,7 @@
     "단어": "복세편살 (bok-se-pyeon-sahl)",
     "설명": "“let’s live a comfortable life in a complex world”",
     "긴설명": "An abbreviation for “복잡한 세상 편하게 살자”. Very useful with all the negative news recently.",
-    "예문": "이렇게 시험 망했을때 일수록 복세편살하자",
+    "예문": "이렇게 시험망했을때 일수록 복세편살 하자",
     "예문번역": "Let's take it easy in this stressful life when we failed the exam like this"
   },
   {
@@ -116,7 +116,7 @@
     "단어": "띵곡 (tting-gok)",
     "설명": "excellent piece of music",
     "긴설명": "Koreans simply changed 명 to 띵 due to its similar shape. Other variations include: 댕댕이 (from 멍멍이 meaning doggo), 댕청 (from 멍청 meaning dumb in a cute way).",
-    "예문": "이번 아이유 신곡 들어봤어? 완전 띵곡이더라.",
+    "예문": "이번 아이유 신곡 들어봤어? 완전 띵곡 이더라.",
     "예문번역": "Have you listened to IU's new song? It's a masterpiece."
   },
   {

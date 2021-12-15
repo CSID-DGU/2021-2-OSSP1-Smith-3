@@ -2,13 +2,13 @@
   {
     "소분류": "어디로 갈지 정하는 상황",
     "발화자": "A-1",
-    "한국어": "우리 7월에 여행 가기로 한 거 어디 갈지 결정했어?",
+    "한국어": "우리 7월에 여행 가기로 한 거 어디 갈지 결정 했어?",
     "영어": "Do you remember that we are going on the trip together in July? Did you decide where to go?"
   },
   {
     "소분류": "어디로 갈지 정하는 상황",
     "발화자": "B-1",
-    "한국어": "아니. 세부랑 태국 중에 고민이야. 어떡할까?",
+    "한국어": "아니. 방콕이랑 세부 중에 고민이야. 어떡할까?",
     "영어": "Not yet. I don't know what to choose, Bangkok or Cebu. What do you think?"
   },
   {
@@ -26,19 +26,19 @@
   {
     "소분류": "여행 와서 길 물을 때",
     "발화자": "A-1",
-    "한국어": "실례합니다. 이 음식점으로 가는 방법 좀 알려주세요.",
-    "영어": "Excuse me. How can I get to this restaurant?"
+    "한국어": "실례합니다. 가까운 지하철 역으로 가려면 어떻게 가나요?",
+    "영어": "Excuse me. How can I get to the subway station nearby?"
   },
   {
     "소분류": "여행 와서 길 물을 때",
     "발화자": "B-1",
-    "한국어": "여기 가까워요. 이 길로 쭉 직진하시면 노란색 큰 간판이 있는데  거기 바로 옆 골목이에요.",
-    "영어": "It's very close. Go straight this way and you'll see a big yellow sign. The restaurant is in the alley right next to it."
+    "한국어": "이 길로 쭉 직진하시면 노란색 큰 간판이 있어요. 거기서 오른쪽으로 가시면 돼요.",
+    "영어": "Go straight this way and you'll see a big yellow sign. Then, turn right. You'll see the subway station."
   },
   {
     "소분류": "여행 와서 길 물을 때",
     "발화자": "A-2",
-    "한국어": "감사합니다. 혹시 가는 데 시간은 얼마나 걸릴까요?",
+    "한국어": "감사합니다. 혹시 가는데 시간은 얼마나 걸릴까요?",
     "영어": "Thanks, how long will it take to get there?"
   },
   {
@@ -80,7 +80,7 @@
   {
     "소분류": "일정을 변경하는 상황",
     "발화자": "B-2",
-    "한국어": "그래. 다음에 다시 갈 기회가 있을 거야. 다른 곳을 찾아보자.",
+    "한국어": "그래. 다음에 다시 갈 기회가 있을 거야. 다른 곳을 찾아 보자.",
     "영어": "I see. We'll find another opportunity. Let' find another place to go."
   }
 ]

@@ -8,7 +8,7 @@
   {
     "소분류": "제품에 문제가 있을 때",
     "발화자": "B-1",
-    "한국어": "확인해보니 휴대전화 배터리 교체가 필요합니다.",
+    "한국어": "확인해 보니 휴대전화 배터리 교체가 필요합니다.",
     "영어": "After checking it,  I found that the cellphone battery needs to be replaced."
   },
   {
@@ -26,7 +26,7 @@
   {
     "소분류": "교환/환불 요청할 때",
     "발화자": "A-1",
-    "한국어": "액정 보호필름을 구매했는데 깨진 상태로 왔어요. 교환해주세요.",
+    "한국어": "액정보호필름을 구매했는데 깨진 상태로 왔어요. 교환해 주세요.",
     "영어": "I bought a protective film for my display, but it came broken. Please exchange it."
   },
   {
@@ -50,7 +50,7 @@
   {
     "소분류": "제품이 있는 지 문의할 때",
     "발화자": "A-1",
-    "한국어": "혹시 근처 다른 매장에 재고가 남아있나요?",
+    "한국어": "혹시 근처 다른 매장에 재고가 남아 있나요?",
     "영어": "Is there any left in stock in other branches nearby?"
   },
   {

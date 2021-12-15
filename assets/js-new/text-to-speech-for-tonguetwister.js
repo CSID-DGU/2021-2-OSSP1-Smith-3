@@ -1,6 +1,5 @@
 const btn_tts = document.querySelector('.btn_tts');
 
-
 btn_tts.addEventListener('click', function() {
   let voices = [];
 

@@ -15,10 +15,13 @@ recognition.continuous = true;
 // 숫자가 작을수록 발음대로 적고, 크면 문장의 적합도에 따라 알맞은 단어로 대체합니다.
 // maxAlternatives가 크면 이상한 단어도 문장에 적합하게 알아서 수정합니다.
 // 기본은 10000이었다.
-recognition.maxAlternatives = 1;
+recognition.maxAlternatives = 10000;
 
 const speech_to_text = document.getElementById("speech_to_text");
 const voice = document.getElementById("voice");
+
+var error = document.getElementById('error');
+var correct = document.getElementById('correct');
 
 let speechToText = "";
 
@@ -45,6 +48,8 @@ btn_mic_toggle.addEventListener("click", () => {
         is_mic_on = false;
         recognition.abort();
         voice.value = speech_to_text.innerHTML;
+        error.innerHTML = ""
+        correct.innerHTML = ""
     }
     // 꺼져 있으면
     else {

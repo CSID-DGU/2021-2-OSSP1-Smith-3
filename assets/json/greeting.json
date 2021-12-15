@@ -14,13 +14,13 @@
   {
     "소분류": "소개팅에서 처음 만난 상황",
     "발화자": "B-1",
-    "한국어": "칭찬해주셔서 감사해요. 그런 소리 잘 못 듣는데.",
+    "한국어": "칭찬해 주셔서 감사해요. 그런 소리 잘 못 듣는데.",
     "영어": "Thank you for your compliment. I've hardly heard that."
   },
   {
     "소분류": "친구랑 오랜만에 만난 상황",
     "발화자": "A-1",
-    "한국어": "잘 지냈어? 오랜만이야. 우리 얼마만에 보는 거지?",
+    "한국어": "잘 지냈어? 오랜만이야. 우리 얼마 만에 보는 거지?",
     "영어": "How have you been? It's been a while. When was the last time we met?"
   },
   {
@@ -39,12 +39,12 @@
     "소분류": "우연히 길에서 만난 지인",
     "발화자": "B-1",
     "한국어": "당연하지! 너 김지우. 3학년 3반 21번!",
-    "영어": "Of course! You are Ji Hoo. You were in 3rd-grade, class 3, and No. 21!"
+    "영어": "Of course! You are Kim Ji Woo. You were in 3rd-grade, class 3, and No. 21!"
   },
   {
     "소분류": "우연히 길에서 만난 지인",
     "발화자": "A-2",
-    "한국어": "기억하는구나. 와 진짜 오랜만이다. 잘 지냈어?",
+    "한국어": "기억 하는구나. 와 진짜 오랜만이다. 잘 지냈어?",
     "영어": "You do remember me. I haven't seen you for ages. How have you been?"
   },
   {
