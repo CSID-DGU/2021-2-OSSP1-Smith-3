@@ -58,7 +58,8 @@ Accordingly, a service was planned to help Korean learners practice Korean pronu
 ----------------------------
 ### 사용 방법
 ### 학습모드
-![image](https://user-images.githubusercontent.com/80972215/122677606-00405500-d21e-11eb-9f1e-0814a7026367.png)
+
+![image](https://user-images.githubusercontent.com/76807684/146647800-22fa30c6-d150-4e0e-8cdd-e6dadd159577.png)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[프로그램 화면]
 1. 왼쪽의 예문 박스에서 헤드셋 버튼을 클릭하면 한국어 발음을 들을 수 있다.
@@ -70,8 +71,10 @@ Accordingly, a service was planned to help Korean learners practice Korean pronu
 2. Press the <연습시작> button and pronounce the example sentence.
 3. If you have pronounced all the sentences, press the <연습종료> button and click the <정확도확인> button to check the results.
 
+https://user-images.githubusercontent.com/76807684/146647852-2ffd8531-3857-42f1-8759-c9f0d456d8f0.mp4
+
 ### 원하는 텍스트 연습
-![image](https://user-images.githubusercontent.com/80972215/122677606-00405500-d21e-11eb-9f1e-0814a7026367.png)
+![image](https://user-images.githubusercontent.com/76807684/146647812-32af07d0-7eae-46ac-a78d-11f508bfe068.png)
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[프로그램 화면]
 1. 원하는 문장을 직접 입력해서 연습하는 것도 가능하다.
@@ -86,5 +89,6 @@ Accordingly, a service was planned to help Korean learners practice Korean pronu
 4. If you have pronounced all the sentences, press the <연습종료> button and click the <정확도확인> button to check the results.
 
 ### 프로그램 구조도
-![image](https://user-images.githubusercontent.com/80972215/122677637-1cdc8d00-d21e-11eb-8527-787812a9fd79.png)
+![image](https://user-images.githubusercontent.com/76807684/146647839-a22e9e29-47d0-4484-9794-868cfa634273.png)
+
 
