@@ -57,6 +57,7 @@ Accordingly, a service was planned to help Korean learners practice Korean pronu
 
 ----------------------------
 ### 사용 방법
+
 ### 학습모드
 
 ![image](https://user-images.githubusercontent.com/76807684/146647800-22fa30c6-d150-4e0e-8cdd-e6dadd159577.png)
@@ -74,6 +75,7 @@ Accordingly, a service was planned to help Korean learners practice Korean pronu
 
 https://user-images.githubusercontent.com/76807684/146647852-2ffd8531-3857-42f1-8759-c9f0d456d8f0.mp4
 <br>
+<br>
 
 ### 원하는 텍스트 연습
 ![image](https://user-images.githubusercontent.com/76807684/146647812-32af07d0-7eae-46ac-a78d-11f508bfe068.png)
@@ -90,6 +92,7 @@ https://user-images.githubusercontent.com/76807684/146647852-2ffd8531-3857-42f1-
 2. After entering the desired sentence in the square box on the left, you can hear the Korean pronunciation by clicking the headset button.
 3. Press the <텍스트 분석> button, press the <연습시작> button, and pronounce the corresponding sentence.
 4. If you have pronounced all the sentences, press the <연습종료> button and click the <정확도확인> button to check the results.
+<br>
 
 ### 프로그램 구조도
 ![image](https://user-images.githubusercontent.com/76807684/146647839-a22e9e29-47d0-4484-9794-868cfa634273.png)
