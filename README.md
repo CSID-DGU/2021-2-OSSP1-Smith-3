@@ -60,8 +60,7 @@ Accordingly, a service was planned to help Korean learners practice Korean pronu
 ### 학습모드
 
 ![image](https://user-images.githubusercontent.com/76807684/146647800-22fa30c6-d150-4e0e-8cdd-e6dadd159577.png)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[프로그램 화면]
+<div align="center">[프로그램 화면]</div>
 1. 왼쪽의 예문 박스에서 헤드셋 버튼을 클릭하면 한국어 발음을 들을 수 있다.
 2. <연습시작> 버튼을 누르고, 예문을 발음한다.
 3. 문장을 다 발음했다면 <연습종료> 버튼을 누르고, <정확도확인> 버튼을 클릭하여 결과를 확인한다.
@@ -75,8 +74,7 @@ https://user-images.githubusercontent.com/76807684/146647852-2ffd8531-3857-42f1-
 
 ### 원하는 텍스트 연습
 ![image](https://user-images.githubusercontent.com/76807684/146647812-32af07d0-7eae-46ac-a78d-11f508bfe068.png)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[프로그램 화면]
+<div align="center">[프로그램 화면]</div>
 1. 원하는 문장을 직접 입력해서 연습하는 것도 가능하다.
 2. 왼쪽의 네모 박스에 원하는 문장을 입력한 뒤, 헤드셋 버튼을 클릭하면 한국어 발음을 들을 수 있다.
 3. <텍스트 분석> 버튼을 누르고, <연습시작> 버튼을 누른 뒤, 해당 문장을 발음한다.
