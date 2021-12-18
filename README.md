@@ -72,9 +72,10 @@ Accordingly, a service was planned to help Korean learners practice Korean pronu
 1. Click the headset button in the example box on the left to hear Korean pronunciation.
 2. Press the <연습시작> button and pronounce the example sentence.
 3. If you have pronounced all the sentences, press the <연습종료> button and click the <정확도확인> button to check the results.
+<br>
 
 https://user-images.githubusercontent.com/76807684/146647852-2ffd8531-3857-42f1-8759-c9f0d456d8f0.mp4
-<br>
+
 <br>
 
 ### 원하는 텍스트 연습
