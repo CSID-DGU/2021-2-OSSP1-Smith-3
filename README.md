@@ -1,21 +1,7 @@
-# 편삼전일팀
-한국어 발음 연습 웹사이트
+# 스위스에서 온 스미스씨 
 
-----------------------------
-### 팀원
-  + 정성현 
-  + 조현지 
-  + 문유경 
-  + 정아연 
-  + 
-----------------------------
-### licenses:
-- sources: LICENSE_APACHE</br>
-   key: apache-2.0</br>
-- sources: LICENSE_GNU</br>
-   key: gpl-3.0</br>
+## 한국어 발음 연습 웹사이트 - 공개SW프로젝트 2021-2 01분반 편삼전일 팀
 
-----------------------------
 ### 소개
 한국어 학습자들을 위한 한국어 발음 연습을 도와주는 웹사이트이다.
 사용자는 실생활에서 쓰이는 다양한 예문들을 직접 연습하면서 부족한 부분을 개선해 볼 수 있다.
@@ -51,17 +37,19 @@ Accordingly, a service was planned to help Korean learners practice Korean pronu
 ----------------------------
 
 ### 패키지 설치
+    >> npm install  
     >> pip install eunjeon
     >> pip install jamo
-    
-
 ----------------------------
 ### 사용 방법
+로컬 서버 localhost:8080에서 확인 가능
 
-### 학습모드
+    >> npm start
+
+#### 학습모드
 
 ![image](https://user-images.githubusercontent.com/76807684/146647800-22fa30c6-d150-4e0e-8cdd-e6dadd159577.png)
-<div align="center">[프로그램 화면]</div>
+<div align="center">[학습모드 예문 연습 페이지]</div>
 <br>
 
 1. 왼쪽의 예문 박스에서 헤드셋 버튼을 클릭하면 한국어 발음을 들을 수 있다.
@@ -74,13 +62,14 @@ Accordingly, a service was planned to help Korean learners practice Korean pronu
 3. If you have pronounced all the sentences, press the <연습종료> button and click the <정확도확인> button to check the results.
 <br>
 
+#### 학습모드 사용 영상
 https://user-images.githubusercontent.com/76807684/146647852-2ffd8531-3857-42f1-8759-c9f0d456d8f0.mp4
 
 <br>
 
-### 원하는 텍스트 연습
+#### 원하는 텍스트 연습
 ![image](https://user-images.githubusercontent.com/76807684/146647812-32af07d0-7eae-46ac-a78d-11f508bfe068.png)
-<div align="center">[프로그램 화면]</div>
+<div align="center">[원하는 텍스트 연습 페이지]</div>
 <br>
 
 1. 원하는 문장을 직접 입력해서 연습하는 것도 가능하다.
@@ -95,7 +84,27 @@ https://user-images.githubusercontent.com/76807684/146647852-2ffd8531-3857-42f1-
 4. If you have pronounced all the sentences, press the <연습종료> button and click the <정확도확인> button to check the results.
 <br>
 
+
+----------------------------
+
 ### 프로그램 구조도
 ![image](https://user-images.githubusercontent.com/76807684/146647839-a22e9e29-47d0-4484-9794-868cfa634273.png)
 
+----------------------------
 
+### 팀원
+|이름|학과|학번|
+|---|---|---|
+|정성현|컴퓨터공학전공|2018113573|
+|정아연|컴퓨터공학전공|2018113575|
+|문유경|컴퓨터공학전공|2018112154|
+|조현지|컴퓨터공학전공|2019113581|
+
+----------------------------
+### LICENSE
+- sources: LICENSE_APACHE</br>
+   key: apache-2.0</br>
+- sources: LICENSE_GNU</br>
+   key: gpl-3.0</br>
+
+----------------------------
